@@ -1,0 +1,18 @@
+project_id = "gt-paddock"
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:4178"
+additional_redirect_urls = ["http://127.0.0.1:4178", "http://localhost:4178"]
+enable_signup = true
+minimum_password_length = 8
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+max_frequency = "1m"
+otp_length = 8
+
+[auth.mfa.totp]
+enroll_enabled = true
+verify_enabled = true

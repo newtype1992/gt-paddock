@@ -1,0 +1,26 @@
+{
+  "name": "gt-paddock",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "playwright test",
+    "test:db": "node --test tests/database.test.js",
+    "format": "prettier --write src tests *.json *.js *.html README.md"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.109.0",
+    "lucide-react": "1.43.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@playwright/test": "1.63.0",
+    "prettier": "3.9.6",
+    "vite": "8.2.2"
+  }
+}

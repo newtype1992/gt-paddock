@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env*
+!.env.example
+.vercel/
+test-results/
+playwright-report/
+*.log
+norton-ca.pem
+.venv/
+__pycache__/
+companion/recordings/
+supabase/.temp/
+/screenshot-*.png
+/concept.png

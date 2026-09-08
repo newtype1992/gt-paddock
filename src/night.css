@@ -1,0 +1,798 @@
+:root {
+  color-scheme: dark;
+  color: #edf1f8;
+  background: #08090b;
+  --surface: #111216;
+  --line: #292c33;
+  --muted: #a0a6b3;
+  --blue: #408cff;
+}
+body {
+  background: #08090b;
+}
+.sidebar {
+  background: #0d0e11;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+}
+.brand-mark,
+.text-button,
+.tabs .selected,
+.big-number,
+.car-readings strong {
+  color: #73adff;
+}
+.team,
+.storage-state,
+.settings-section,
+dl > div {
+  border-color: var(--line);
+}
+.avatar,
+.sidebar nav em,
+.car-number,
+.radio-icon {
+  background: #202630;
+  color: #b8d5ff;
+}
+.sidebar nav button:hover {
+  background: #1b1e24;
+}
+.sidebar nav button.active {
+  background: #1765d9;
+  color: #fff;
+  box-shadow: inset 3px 0 #7fbcff;
+}
+.sidebar nav .active em {
+  background: #114faa;
+  color: #fff;
+}
+.topbar {
+  background: #0d0e11;
+  border-color: var(--line);
+}
+.breadcrumb strong,
+.profile strong,
+.team strong {
+  color: #e3e8f1;
+}
+.mode-label i,
+.progress i {
+  background: var(--blue);
+}
+.button,
+input,
+select,
+textarea {
+  background: #17191f;
+  color: #e4e9f2;
+  border-color: #363a44;
+}
+.button:hover,
+.icon-button:hover {
+  background: #242934;
+  color: #fff;
+}
+.button.primary {
+  background: #1765d9;
+  border-color: #3987ff;
+}
+.button.primary:hover {
+  background: #2477ed;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus-visible,
+a:focus-visible {
+  outline-color: #6daaff;
+}
+.tabs .selected {
+  border-color: var(--blue);
+}
+.section,
+.stat-strip,
+.car-card,
+.gt7-readings,
+.gt7-chart {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.stat,
+.car-readings,
+.task-row,
+.car-summary,
+.section-foot,
+.session-tabs,
+.toolbar,
+td,
+th,
+.radio-list article,
+.gt7-readings > div,
+.gt7-car,
+.gt7-connect,
+.gt7-profile-connect,
+.profile-identity {
+  border-color: var(--line);
+}
+th {
+  background: #181a20;
+  color: #afb8c9;
+}
+td,
+.mono,
+.pedals strong {
+  color: #dce4f2;
+}
+.badge {
+  background: #252831;
+  color: #b8c4d8;
+}
+.badge.green {
+  background: #152c29;
+  color: #67dcc4;
+}
+.badge.red {
+  background: #352023;
+  color: #ff9b99;
+}
+.task-row input {
+  accent-color: var(--blue);
+}
+.progress {
+  background: #282b33;
+}
+.weekend-band {
+  background: #14171d;
+  border-color: var(--blue);
+}
+.circuit-watermark {
+  color: #28374c;
+}
+.weekend-band .event-tag,
+.event-meta span {
+  color: #bdcce0;
+}
+.garage-image {
+  background: #202329;
+}
+.garage-image a {
+  background: #101218ee;
+  color: #d7e2f3;
+}
+.muted,
+.empty,
+.loading,
+.eyebrow,
+.page-heading p,
+.breadcrumb,
+.mode-label,
+.nav-caption,
+.team small,
+.profile small,
+.icon-button,
+.stat > div,
+.stat > small,
+.stat > div svg,
+.car-summary small,
+.task-copy span,
+.task-row time,
+.task-row.done .task-copy strong,
+.section-foot,
+.tabs button,
+td small,
+.radio-meta time,
+.radio-list p,
+footer,
+.search,
+.plan-total,
+.car-card > p,
+.car-readings > div,
+dt,
+.auth-notice,
+.form-fields label,
+.auth-fields label,
+.gt7-readings span,
+.gt7-readings small,
+.pedals label,
+.pedals > div,
+.gt7-profile-connect label,
+.profile-identity p,
+.profile-identity span,
+.gt7-source,
+.recorded-session small,
+.gt7-car figcaption {
+  color: var(--muted);
+}
+.error,
+.form-error {
+  color: #ffaaa6;
+  background: #301c20;
+}
+.form-actions .danger {
+  color: #ffaaa6;
+}
+dialog {
+  background: #13151a;
+  color: #edf1f8;
+  border-color: #414753;
+  box-shadow: 0 24px 80px #0009;
+}
+dialog::backdrop {
+  background: #000a;
+}
+.gt7-message {
+  background: #172437;
+  color: #c6dcff;
+}
+.recorded-session {
+  border-color: var(--line);
+}
+.recorded-session:hover {
+  background: #1d2430;
+}
+.recorded-session[aria-pressed="true"] {
+  background: #14243a;
+  box-shadow: inset 3px 0 var(--blue);
+}
+.gt7-page {
+  gap: 18px;
+}
+.gt7-connect {
+  padding: 14px 0;
+}
+.gt7-connect .muted {
+  color: #77b4ff;
+  font-size: 11px;
+}
+.gt7-car {
+  padding: 8px 0 16px;
+}
+.gt7-car figure {
+  width: 180px;
+}
+.gt7-car h3 {
+  font-size: 23px;
+}
+.gt7-car figcaption {
+  font-size: 9px;
+}
+.gt7-car-name > span {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.instrument-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.instrument-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.instrument-heading h2 svg {
+  color: #6ba8ff;
+}
+.instrument-heading small {
+  color: var(--muted);
+  font-size: 9px;
+}
+.cockpit {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px minmax(0, 1fr) minmax(
+      150px,
+      0.85fr
+    );
+  align-items: center;
+  gap: 12px;
+  background: #111216;
+  border-block: 1px solid #343a46;
+  padding: 14px 24px;
+}
+.instrument-dial {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 240 / 200;
+  justify-self: center;
+}
+.instrument-dial svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.dial-value {
+  position: absolute;
+  inset: 32% 8% 18%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dial-value span,
+.gear-tower > span {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #a7b2c6;
+}
+.dial-value strong {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 50px;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.dial-value small {
+  font-size: 10px;
+  color: #7c9bc3;
+}
+.dial-scale {
+  position: absolute;
+  bottom: 3%;
+  left: 18%;
+  right: 18%;
+  display: flex;
+  justify-content: space-between;
+  color: #909bad;
+  font-size: 9px;
+}
+.gear-tower {
+  text-align: center;
+}
+.gear-tower > strong {
+  display: block;
+  font:
+    600 84px / 1.15 "Barlow Condensed",
+    sans-serif;
+  color: #e8f0ff;
+}
+.gear-tower > small {
+  display: block;
+  font-size: 8px;
+  color: #939fb3;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+.rpm-leds {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3px;
+}
+.rpm-leds i {
+  height: 9px;
+  background: #2a2e37;
+}
+.rpm-leds i.lit {
+  background: #438cff;
+}
+.pedal-stack {
+  display: grid;
+  gap: 22px;
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+}
+.pedal-instrument label,
+.fuel-reading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 10px;
+  color: #b1bbcb;
+}
+.pedal-instrument strong,
+.fuel-reading strong {
+  font:
+    500 24px "Barlow Condensed",
+    sans-serif;
+  color: #eff4ff;
+  white-space: nowrap;
+}
+.pedal-instrument small,
+.fuel-reading small {
+  font:
+    10px "DM Sans",
+    sans-serif;
+  color: #a6afbf;
+}
+.pedal-instrument meter {
+  display: block;
+  width: 100%;
+  height: 8px;
+  margin-top: 8px;
+  appearance: none;
+  border: none;
+  background: #292c32;
+}
+.pedal-instrument meter::-webkit-meter-bar {
+  background: #292c32;
+  border: none;
+  border-radius: 0;
+}
+.pedal-instrument meter::-webkit-meter-optimum-value {
+  background: var(--channel);
+}
+.pedal-instrument meter::-moz-meter-bar {
+  background: var(--channel);
+}
+.telemetry-secondary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(270px, 1fr);
+  gap: 18px;
+}
+.scope-section,
+.thermal-section,
+.lap-comparison {
+  min-width: 0;
+  background: #111216;
+  border-block: 1px solid var(--line);
+}
+.scope-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.scope-controls select {
+  font-size: 10px;
+  padding: 5px 8px;
+}
+.signal-tabs {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #24272f;
+}
+.signal-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 0;
+  border-bottom: 2px solid transparent;
+  color: #98a4b6;
+  font-size: 10px;
+}
+.signal-tabs button[aria-selected="true"] {
+  color: #82b7ff;
+  border-color: #408cff;
+}
+.signal-tabs > span {
+  margin-left: auto;
+  font-size: 9px;
+  color: #ffc57f;
+}
+.scope-plot {
+  padding: 12px 16px 0;
+}
+.scope-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+.scope-label strong {
+  font-family: Consolas, monospace;
+  font-size: 12px;
+}
+.scope-label small {
+  color: #a6afbf;
+  font:
+    9px "DM Sans",
+    sans-serif;
+}
+.scope-plot svg {
+  display: block;
+  width: 100%;
+  height: 165px;
+  overflow: visible;
+}
+.scope-plot svg text {
+  font:
+    11px Consolas,
+    monospace;
+  fill: #a1acbe;
+}
+.thermal-layout {
+  position: relative;
+  width: 265px;
+  max-width: 100%;
+  height: 265px;
+  margin: 20px auto 0;
+}
+.thermal-chassis {
+  position: absolute;
+  left: 96px;
+  top: 24px;
+  width: 74px;
+  height: 214px;
+  border: 1px solid #414752;
+  border-radius: 20px 20px 12px 12px;
+  background: #191c22;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  color: #8591a4;
+  font-size: 8px;
+}
+.thermal-chassis i {
+  width: 48px;
+  height: 67px;
+  border: 1px solid #394353;
+  border-top: 8px solid #3c526f;
+  border-radius: 8px;
+}
+.thermal-axle {
+  position: absolute;
+  width: 142px;
+  height: 2px;
+  background: #414752;
+  left: 62px;
+}
+.thermal-axle.front {
+  top: 80px;
+}
+.thermal-axle.rear {
+  top: 201px;
+}
+.thermal-wheel {
+  position: absolute;
+  width: 78px;
+  text-align: center;
+}
+.wheel-0 {
+  top: 10px;
+  left: 0;
+}
+.wheel-1 {
+  top: 10px;
+  right: 0;
+}
+.wheel-2 {
+  bottom: 10px;
+  left: 0;
+}
+.wheel-3 {
+  bottom: 10px;
+  right: 0;
+}
+.thermal-wheel > span {
+  font-size: 9px;
+  color: #a2adc0;
+}
+.thermal-wheel strong {
+  display: block;
+  font:
+    28px "Barlow Condensed",
+    sans-serif;
+  margin: 5px 0;
+}
+.thermal-wheel small {
+  font:
+    10px "DM Sans",
+    sans-serif;
+  color: #a2adc0;
+}
+.tyre-tread {
+  height: 33px;
+  width: 23px;
+  margin: auto;
+  border: 2px solid var(--heat);
+  border-radius: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 4px,
+    #30343d 4px 5px
+  );
+}
+.thermal-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px 25px 22px;
+  color: #a4afc0;
+  font-size: 9px;
+}
+.thermal-legend i {
+  height: 3px;
+  width: 90px;
+  background: linear-gradient(90deg, #599fff, #50dfbe, #e0d555, #ff7272);
+}
+.session-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 18px 0;
+  border-block: 1px solid var(--line);
+}
+.session-metrics > div {
+  padding: 0 20px;
+  border-right: 1px solid var(--line);
+}
+.session-metrics > div:last-child {
+  border: 0;
+}
+.session-metrics span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a2adc0;
+  font-size: 10px;
+}
+.session-metrics strong {
+  display: block;
+  font:
+    32px "Barlow Condensed",
+    sans-serif;
+  margin-top: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.session-metrics strong small {
+  font:
+    10px "DM Sans",
+    sans-serif;
+  margin-left: 5px;
+  color: #a2adc0;
+}
+.lap-bars {
+  padding: 18px 20px;
+  display: grid;
+  gap: 14px;
+  max-height: 300px;
+  overflow: auto;
+}
+.lap-bar-row {
+  display: grid;
+  grid-template-columns: 30px minmax(20px, 1fr) 78px 56px;
+  align-items: center;
+  gap: 12px;
+  font:
+    11px Consolas,
+    monospace;
+}
+.lap-bar-row > span {
+  color: #a7b4c8;
+}
+.lap-bar-row small {
+  color: #9daec9;
+  text-align: right;
+  font-size: 10px;
+}
+.lap-bar-row strong {
+  font-weight: 400;
+}
+.lap-bar-track {
+  height: 15px;
+  background: #20232b;
+}
+.lap-bar-track i {
+  display: block;
+  height: 100%;
+  background: #355680;
+}
+.lap-bar-track i.best {
+  background: #438cff;
+}
+@media (max-width: 1150px) {
+  .cockpit {
+    grid-template-columns: minmax(0, 1fr) 85px minmax(0, 1fr);
+    padding: 14px;
+  }
+  .pedal-stack {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 16px 0 0;
+  }
+  .telemetry-secondary {
+    grid-template-columns: minmax(0, 1.5fr) minmax(250px, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .telemetry-secondary {
+    grid-template-columns: 1fr;
+  }
+  .thermal-layout {
+    margin-top: 15px;
+  }
+  .session-metrics strong {
+    font-size: 27px;
+  }
+}
+@media (max-width: 600px) {
+  .cockpit {
+    gap: 4px;
+    padding: 16px 6px;
+    grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr);
+  }
+  .dial-value strong {
+    font-size: 32px;
+  }
+  .dial-value span {
+    font-size: 8px;
+  }
+  .dial-value small {
+    font-size: 8px;
+  }
+  .dial-scale {
+    font-size: 8px;
+  }
+  .gear-tower > strong {
+    font-size: 52px;
+  }
+  .gear-tower > small {
+    font-size: 6px;
+  }
+  .rpm-leds {
+    gap: 1px;
+  }
+  .rpm-leds i {
+    height: 5px;
+  }
+  .pedal-stack {
+    gap: 12px;
+    padding-inline: 8px;
+  }
+  .pedal-instrument label,
+  .fuel-reading {
+    flex-wrap: wrap;
+    font-size: 9px;
+    gap: 4px;
+  }
+  .pedal-instrument strong,
+  .fuel-reading strong {
+    font-size: 22px;
+  }
+  .session-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 0;
+  }
+  .session-metrics > div:nth-child(2) {
+    border: 0;
+  }
+  .session-metrics > div {
+    padding: 0 12px;
+  }
+  .instrument-heading {
+    padding: 14px 12px;
+    flex-wrap: wrap;
+  }
+  .instrument-heading h2 {
+    font-size: 13px;
+  }
+  .scope-plot {
+    padding-inline: 8px;
+  }
+  .signal-tabs {
+    padding-inline: 12px;
+  }
+  .gt7-car {
+    gap: 10px;
+  }
+  .gt7-car-name {
+    flex-basis: 140px;
+  }
+  .gt7-car h3 {
+    font-size: 20px;
+  }
+  .gt7-car figure {
+    width: 145px;
+  }
+  .gt7-car figcaption {
+    font-size: 8px;
+  }
+  .lap-bars {
+    padding: 16px 12px;
+  }
+  .lap-bar-row {
+    grid-template-columns: 22px minmax(20px, 1fr) 70px 48px;
+    gap: 8px;
+    font-size: 10px;
+  }
+}

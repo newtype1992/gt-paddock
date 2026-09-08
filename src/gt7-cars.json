@@ -1,0 +1,2342 @@
+{
+  "cars": {
+    "24": {
+      "model": "180SX Type X '96",
+      "manufacturer": "Nissan"
+    },
+    "31": {
+      "model": "Camaro Z28 '69",
+      "manufacturer": "Chevrolet"
+    },
+    "41": {
+      "model": "Corvette Stingray (C3) '69",
+      "manufacturer": "Chevrolet"
+    },
+    "48": {
+      "model": "Fairlady 240ZG (HS30) '71",
+      "manufacturer": "Nissan"
+    },
+    "63": {
+      "model": "Corolla Levin 1600GT APEX (AE86) '83",
+      "manufacturer": "Toyota"
+    },
+    "82": {
+      "model": "Supra RZ '97",
+      "manufacturer": "Toyota"
+    },
+    "104": {
+      "model": "Sileighty '98",
+      "manufacturer": "Nissan"
+    },
+    "105": {
+      "model": "205 Turbo 16 Evolution 2 '86",
+      "manufacturer": "Peugeot"
+    },
+    "135": {
+      "model": "S800 '66",
+      "manufacturer": "Honda"
+    },
+    "137": {
+      "model": "Beat '91",
+      "manufacturer": "Honda"
+    },
+    "145": {
+      "model": "Copen '02",
+      "manufacturer": "Daihatsu"
+    },
+    "173": {
+      "model": "R5 Turbo '80",
+      "manufacturer": "Renault"
+    },
+    "187": {
+      "model": "Tuscan Speed 6 '00",
+      "manufacturer": "TVR"
+    },
+    "201": {
+      "model": "Eunos Roadster (NA) '89",
+      "manufacturer": "Mazda"
+    },
+    "203": {
+      "model": "Integra Type R (DC2) '98",
+      "manufacturer": "Honda"
+    },
+    "204": {
+      "model": "Civic Type R (EK) '98",
+      "manufacturer": "Honda"
+    },
+    "205": {
+      "model": "RX-7 Spirit R Type A (FD) '02",
+      "manufacturer": "Mazda"
+    },
+    "207": {
+      "model": "MR2 GT-S '97",
+      "manufacturer": "Toyota"
+    },
+    "210": {
+      "model": "R34 GT-R V-spec II Nur '02",
+      "manufacturer": "Nissan"
+    },
+    "211": {
+      "model": "Lancer Evolution V GSR '98",
+      "manufacturer": "Mitsubishi"
+    },
+    "216": {
+      "model": "McLaren F1 GTR Race Car '97",
+      "manufacturer": "BMW"
+    },
+    "293": {
+      "model": "NSX Type R '92",
+      "manufacturer": "Honda"
+    },
+    "296": {
+      "model": "787B '91",
+      "manufacturer": "Mazda"
+    },
+    "301": {
+      "model": "Lancer Evolution IV GSR '96",
+      "manufacturer": "Mitsubishi"
+    },
+    "315": {
+      "model": "Cobra 427 '66",
+      "manufacturer": "Shelby"
+    },
+    "334": {
+      "model": "Clio V6 24V '00",
+      "manufacturer": "Renault"
+    },
+    "345": {
+      "model": "Sprinter Trueno 1600GT APEX (S.Shigeno Version)",
+      "manufacturer": "Toyota"
+    },
+    "365": {
+      "model": "155 2.5 V6 TI '93",
+      "manufacturer": "Alfa Romeo"
+    },
+    "374": {
+      "model": "RX-7 GT-X (FC) '90",
+      "manufacturer": "Mazda"
+    },
+    "379": {
+      "model": "Impreza Coupe WRX Type R STi Ver.VI '99",
+      "manufacturer": "Subaru"
+    },
+    "387": {
+      "model": "300 SL Coupe '54",
+      "manufacturer": "Mercedes-Benz"
+    },
+    "396": {
+      "model": "NSX Type R '02",
+      "manufacturer": "Honda"
+    },
+    "451": {
+      "model": "Impreza 22B-STi '98",
+      "manufacturer": "Subaru"
+    },
+    "485": {
+      "model": "GT-R GT500 '99",
+      "manufacturer": "Nissan"
+    },
+    "489": {
+      "model": "R33 GT-R V-spec '97",
+      "manufacturer": "Nissan"
+    },
+    "514": {
+      "model": "S2000 '99",
+      "manufacturer": "Honda"
+    },
+    "533": {
+      "model": "Stratos '73",
+      "manufacturer": "Lancia"
+    },
+    "604": {
+      "model": "2000GT '67",
+      "manufacturer": "Toyota"
+    },
+    "665": {
+      "model": "Superbird '70",
+      "manufacturer": "Plymouth"
+    },
+    "688": {
+      "model": "Integra Type R (DC2) '95",
+      "manufacturer": "Honda"
+    },
+    "709": {
+      "model": "Fairlady Z 300ZX TT 2seater '89",
+      "manufacturer": "Nissan"
+    },
+    "773": {
+      "model": "R32 GT-R V-spec II '94",
+      "manufacturer": "Nissan"
+    },
+    "810": {
+      "model": "Sprinter Trueno 1600GT APEX (AE86) '83",
+      "manufacturer": "Toyota"
+    },
+    "818": {
+      "model": "Corvette (C2) '63",
+      "manufacturer": "Chevrolet"
+    },
+    "821": {
+      "model": "Civic Type R (EK) '97",
+      "manufacturer": "Honda"
+    },
+    "829": {
+      "model": "Delta HF Integrale Evoluzione '91",
+      "manufacturer": "Lancia"
+    },
+    "837": {
+      "model": "Skyline Hard Top 2000GT-R (KPGC10) '70",
+      "manufacturer": "Nissan"
+    },
+    "843": {
+      "model": "Supra 3.0GT Turbo A '88",
+      "manufacturer": "Toyota"
+    },
+    "919": {
+      "model": "Silvia Q's (S13) '88",
+      "manufacturer": "Nissan"
+    },
+    "942": {
+      "model": "Corvette ZR-1 (C4) '89",
+      "manufacturer": "Chevrolet"
+    },
+    "954": {
+      "model": "R92CP '92",
+      "manufacturer": "Nissan"
+    },
+    "959": {
+      "model": "TT Coupe 3.2 quattro '03",
+      "manufacturer": "Audi"
+    },
+    "998": {
+      "model": "Sauber Mercedes C9 '89",
+      "manufacturer": "Mercedes-Benz"
+    },
+    "1027": {
+      "model": "DeLorean S2 '04",
+      "manufacturer": "DMC"
+    },
+    "1040": {
+      "model": "Ford GT LM Race Car Spec II",
+      "manufacturer": "Ford"
+    },
+    "1044": {
+      "model": "Sports 800 '65",
+      "manufacturer": "Toyota"
+    },
+    "1067": {
+      "model": "XJR-9 '88",
+      "manufacturer": "Jaguar"
+    },
+    "1069": {
+      "model": "2J '70",
+      "manufacturer": "Chaparral"
+    },
+    "1365": {
+      "model": "R8 4.2 '07",
+      "manufacturer": "Audi"
+    },
+    "1370": {
+      "model": "MINI Cooper S '05",
+      "manufacturer": "MINI"
+    },
+    "1373": {
+      "model": "Viper GTS '02",
+      "manufacturer": "Dodge"
+    },
+    "1378": {
+      "model": "F430 '06",
+      "manufacturer": "Ferrari"
+    },
+    "1384": {
+      "model": "Fairlady Z Version S (Z33) '07",
+      "manufacturer": "Nissan"
+    },
+    "1385": {
+      "model": "Swift Sport '07",
+      "manufacturer": "Suzuki"
+    },
+    "1399": {
+      "model": "M3 '07",
+      "manufacturer": "BMW"
+    },
+    "1402": {
+      "model": "Viper SRT10 Coupe '06",
+      "manufacturer": "Dodge"
+    },
+    "1409": {
+      "model": "F40 '92",
+      "manufacturer": "Ferrari"
+    },
+    "1410": {
+      "model": "512 BB '76",
+      "manufacturer": "Ferrari"
+    },
+    "1425": {
+      "model": "Ford GT LM Spec II Test Car",
+      "manufacturer": "Ford"
+    },
+    "1426": {
+      "model": "Ford GT '06",
+      "manufacturer": "Ford"
+    },
+    "1431": {
+      "model": "RE Amemiya FD3S RX-7",
+      "manufacturer": "RE Amemiya"
+    },
+    "1433": {
+      "model": "Amuse S2000 GT1 Turbo",
+      "manufacturer": "Amuse"
+    },
+    "1448": {
+      "model": "SILVIA spec-R Aero (S15) '02",
+      "manufacturer": "Nissan"
+    },
+    "1458": {
+      "model": "Fairlady Z (Z34) '08",
+      "manufacturer": "Nissan"
+    },
+    "1461": {
+      "model": "Silvia K's Dia Selection (S13) '90",
+      "manufacturer": "Nissan"
+    },
+    "1466": {
+      "model": "GT-R GT500 '08",
+      "manufacturer": "Nissan"
+    },
+    "1470": {
+      "model": "Supra GT500 '97",
+      "manufacturer": "Toyota"
+    },
+    "1474": {
+      "model": "Enzo Ferrari '02",
+      "manufacturer": "Ferrari"
+    },
+    "1480": {
+      "model": "Corvette ZR1 (C6) '09",
+      "manufacturer": "Chevrolet"
+    },
+    "1481": {
+      "model": "Countach 25th Anniversary '88",
+      "manufacturer": "Lamborghini"
+    },
+    "1484": {
+      "model": "Countach LP400 '74",
+      "manufacturer": "Lamborghini"
+    },
+    "1504": {
+      "model": "458 Italia '09",
+      "manufacturer": "Ferrari"
+    },
+    "1507": {
+      "model": "SLS AMG '10",
+      "manufacturer": "AMG"
+    },
+    "1508": {
+      "model": "Lancer Evolution VI GSR T.M. SCP '99",
+      "manufacturer": "Mitsubishi"
+    },
+    "1510": {
+      "model": "NSX GT500 '08",
+      "manufacturer": "Honda"
+    },
+    "1516": {
+      "model": "SC430 GT500 '08",
+      "manufacturer": "Lexus"
+    },
+    "1523": {
+      "model": "500 F '68",
+      "manufacturer": "Fiat"
+    },
+    "1527": {
+      "model": "500 1.2 8V Lounge SS '08",
+      "manufacturer": "Fiat"
+    },
+    "1528": {
+      "model": "SLR McLaren '09",
+      "manufacturer": "Mercedes-Benz"
+    },
+    "1536": {
+      "model": "Zonda R '09",
+      "manufacturer": "Pagani"
+    },
+    "1537": {
+      "model": "Prius G '09",
+      "manufacturer": "Toyota"
+    },
+    "1539": {
+      "model": "GranTurismo S '08",
+      "manufacturer": "Maserati"
+    },
+    "1540": {
+      "model": "McLaren F1 '94",
+      "manufacturer": "McLaren"
+    },
+    "1542": {
+      "model": "Corvette Convertible (C3) '69",
+      "manufacturer": "Chevrolet"
+    },
+    "1543": {
+      "model": "Challenger R/T '70",
+      "manufacturer": "Dodge"
+    },
+    "1545": {
+      "model": "Murcielago LP 640 '09",
+      "manufacturer": "Lamborghini"
+    },
+    "1549": {
+      "model": "Amuse NISMO 380RS Super Leggera",
+      "manufacturer": "Amuse"
+    },
+    "1551": {
+      "model": "330 P4 '67",
+      "manufacturer": "Ferrari"
+    },
+    "1553": {
+      "model": "XJ13 '66",
+      "manufacturer": "Jaguar"
+    },
+    "1563": {
+      "model": "Megane Trophy '11",
+      "manufacturer": "Renault"
+    },
+    "1565": {
+      "model": "Mark IV Race Car '67",
+      "manufacturer": "Ford"
+    },
+    "1578": {
+      "model": "8C Competizione '08",
+      "manufacturer": "Alfa Romeo"
+    },
+    "1581": {
+      "model": "GT by Citroen Road Car",
+      "manufacturer": "Citroen"
+    },
+    "1582": {
+      "model": "Miura P400 Bertone Prototype '67",
+      "manufacturer": "Lamborghini"
+    },
+    "1645": {
+      "model": "GIULIA TZ2 carrozzata da ZAGATO '65",
+      "manufacturer": "Alfa Romeo"
+    },
+    "1646": {
+      "model": "908 HDi FAP '10",
+      "manufacturer": "Peugeot"
+    },
+    "1671": {
+      "model": "Sambabus Typ 2 '62",
+      "manufacturer": "Volkswagen"
+    },
+    "1689": {
+      "model": "Civic Type R (EK) Touring Car",
+      "manufacturer": "Honda"
+    },
+    "1722": {
+      "model": "MP4-12C '10",
+      "manufacturer": "McLaren"
+    },
+    "1729": {
+      "model": "Mustang Mach 1 '71",
+      "manufacturer": "Ford"
+    },
+    "1746": {
+      "model": "Roadster Touring Car",
+      "manufacturer": "Mazda"
+    },
+    "1770": {
+      "model": "Aventador LP 700-4 '11",
+      "manufacturer": "Lamborghini"
+    },
+    "1773": {
+      "model": "Scirocco R '10",
+      "manufacturer": "Volkswagen"
+    },
+    "1778": {
+      "model": "Volkswagen 1200 '66",
+      "manufacturer": "Volkswagen"
+    },
+    "1796": {
+      "model": "A110 '72",
+      "manufacturer": "Alpine"
+    },
+    "1797": {
+      "model": "SLS AMG GT3 '11",
+      "manufacturer": "AMG"
+    },
+    "1893": {
+      "model": "Z8 '01",
+      "manufacturer": "BMW"
+    },
+    "1895": {
+      "model": "Dino 246 GT '71",
+      "manufacturer": "Ferrari"
+    },
+    "1896": {
+      "model": "Model S Signature Performance '12",
+      "manufacturer": "Tesla"
+    },
+    "1898": {
+      "model": "One-77 '11",
+      "manufacturer": "Aston Martin"
+    },
+    "1900": {
+      "model": "XNR Ghia Roadster '60",
+      "manufacturer": "Plymouth"
+    },
+    "1902": {
+      "model": "Z4 GT3 '11",
+      "manufacturer": "BMW"
+    },
+    "1904": {
+      "model": "M3 GT '11",
+      "manufacturer": "BMW"
+    },
+    "1905": {
+      "model": "GT-R NISMO GT3 '13",
+      "manufacturer": "Nissan"
+    },
+    "1907": {
+      "model": "X-BOW R '12",
+      "manufacturer": "KTM"
+    },
+    "1916": {
+      "model": "Corvette C7 '14",
+      "manufacturer": "Chevrolet"
+    },
+    "1925": {
+      "model": "G.T.350 '65",
+      "manufacturer": "Shelby"
+    },
+    "1926": {
+      "model": "Cobra Daytona Coupe '64",
+      "manufacturer": "Shelby"
+    },
+    "1927": {
+      "model": "Sport quattro S1 Pikes Peak '87",
+      "manufacturer": "Audi"
+    },
+    "1931": {
+      "model": "250 GT Berlinetta passo corto '61",
+      "manufacturer": "Ferrari"
+    },
+    "1932": {
+      "model": "1500 Biposto Bertone B.A.T 1 '52",
+      "manufacturer": "Abarth"
+    },
+    "1933": {
+      "model": "MiTo '09",
+      "manufacturer": "Alfa Romeo"
+    },
+    "1935": {
+      "model": "GT40 Mark I '66",
+      "manufacturer": "Ford"
+    },
+    "1956": {
+      "model": "Viper GTS '13",
+      "manufacturer": "Dodge"
+    },
+    "1965": {
+      "model": "R18 TDI '11",
+      "manufacturer": "Audi"
+    },
+    "1973": {
+      "model": "Abarth 500 '09",
+      "manufacturer": "Abarth"
+    },
+    "1975": {
+      "model": "RX500 '70",
+      "manufacturer": "Mazda"
+    },
+    "1984": {
+      "model": "McLaren F1 GTR - BMW '95",
+      "manufacturer": "McLaren"
+    },
+    "1985": {
+      "model": "Firebird Trans Am '78",
+      "manufacturer": "Pontiac"
+    },
+    "1986": {
+      "model": "R8 Gordini '66",
+      "manufacturer": "Renault"
+    },
+    "1987": {
+      "model": "Megane R.S. Trophy '11",
+      "manufacturer": "Renault"
+    },
+    "1990": {
+      "model": "Diablo GT '00",
+      "manufacturer": "Lamborghini"
+    },
+    "2010": {
+      "model": "250 GTO '62",
+      "manufacturer": "Ferrari"
+    },
+    "2011": {
+      "model": "500 Mondial Pinin Farina Coupe '54",
+      "manufacturer": "Ferrari"
+    },
+    "2017": {
+      "model": "GTO '84",
+      "manufacturer": "Ferrari"
+    },
+    "2018": {
+      "model": "365 GTB4 '71",
+      "manufacturer": "Ferrari"
+    },
+    "2026": {
+      "model": "Aqua S '11",
+      "manufacturer": "Toyota"
+    },
+    "2049": {
+      "model": "Veyron 16.4 '13",
+      "manufacturer": "Bugatti"
+    },
+    "2050": {
+      "model": "Huayra '13",
+      "manufacturer": "Pagani"
+    },
+    "2051": {
+      "model": "Genesis Coupe 3.8 '13",
+      "manufacturer": "Hyundai"
+    },
+    "2055": {
+      "model": "Mercedes-Benz AMG VGT",
+      "manufacturer": "AMG"
+    },
+    "2059": {
+      "model": "Corvette Stingray Racer Concept '59",
+      "manufacturer": "Chevrolet"
+    },
+    "2060": {
+      "model": "Racing Kart 125 Shifter",
+      "manufacturer": "Gran Turismo"
+    },
+    "2074": {
+      "model": "M4 '14",
+      "manufacturer": "BMW"
+    },
+    "2076": {
+      "model": "Mercedes-Benz AMG VGT Racing Series",
+      "manufacturer": "AMG"
+    },
+    "2077": {
+      "model": "Red Bull X2014 Standard",
+      "manufacturer": "Gran Turismo"
+    },
+    "2078": {
+      "model": "Red Bull X2014 Junior",
+      "manufacturer": "Gran Turismo"
+    },
+    "2080": {
+      "model": "FT-1",
+      "manufacturer": "Toyota"
+    },
+    "2087": {
+      "model": "BMW VGT",
+      "manufacturer": "BMW"
+    },
+    "2095": {
+      "model": "Concept XR-PHEV EVOLUTION VGT",
+      "manufacturer": "Mitsubishi"
+    },
+    "2098": {
+      "model": "GTI Roadster VGT",
+      "manufacturer": "Volkswagen"
+    },
+    "2099": {
+      "model": "VIZIV GT VGT",
+      "manufacturer": "Subaru"
+    },
+    "2101": {
+      "model": "TS030 Hybrid '12",
+      "manufacturer": "Toyota"
+    },
+    "2103": {
+      "model": "DP-100 VGT",
+      "manufacturer": "Aston Martin"
+    },
+    "2106": {
+      "model": "FT-1 VGT",
+      "manufacturer": "Toyota"
+    },
+    "2107": {
+      "model": "Chaparral 2X VGT",
+      "manufacturer": "Chaparral"
+    },
+    "2108": {
+      "model": "SRT Tomahawk X VGT",
+      "manufacturer": "Dodge"
+    },
+    "2109": {
+      "model": "MINI Clubman VGT",
+      "manufacturer": "MINI"
+    },
+    "2110": {
+      "model": "SRT Tomahawk GTS-R VGT",
+      "manufacturer": "Dodge"
+    },
+    "2111": {
+      "model": "SRT Tomahawk S VGT",
+      "manufacturer": "Dodge"
+    },
+    "2112": {
+      "model": "Alpine VGT",
+      "manufacturer": "Alpine"
+    },
+    "2113": {
+      "model": "PEUGEOT VGT",
+      "manufacturer": "Peugeot"
+    },
+    "2116": {
+      "model": "Alpine VGT Race",
+      "manufacturer": "Alpine"
+    },
+    "2117": {
+      "model": "INFINITI CONCEPT VGT",
+      "manufacturer": "Infiniti"
+    },
+    "2118": {
+      "model": "LM55 VGT",
+      "manufacturer": "Mazda"
+    },
+    "2121": {
+      "model": "Honda Sports VGT",
+      "manufacturer": "Honda"
+    },
+    "2122": {
+      "model": "IsoRivolta Zagato VGT",
+      "manufacturer": "Zagato"
+    },
+    "2123": {
+      "model": "LF-LC GT VGT",
+      "manufacturer": "Lexus"
+    },
+    "2124": {
+      "model": "GTI Supersport VGT",
+      "manufacturer": "Volkswagen"
+    },
+    "2127": {
+      "model": "GT-R LM NISMO '15",
+      "manufacturer": "Nissan"
+    },
+    "2131": {
+      "model": "V12 Vantage GT3 '12",
+      "manufacturer": "Aston Martin"
+    },
+    "2134": {
+      "model": "Bugatti VGT",
+      "manufacturer": "Bugatti"
+    },
+    "2135": {
+      "model": "HYUNDAI N 2025 VGT",
+      "manufacturer": "Hyundai"
+    },
+    "2136": {
+      "model": "4C '14",
+      "manufacturer": "Alfa Romeo"
+    },
+    "2138": {
+      "model": "Mustang GT '15",
+      "manufacturer": "Ford"
+    },
+    "2139": {
+      "model": "RC F '14",
+      "manufacturer": "Lexus"
+    },
+    "2141": {
+      "model": "Golf VII GTI '14",
+      "manufacturer": "Volkswagen"
+    },
+    "2142": {
+      "model": "NISSAN CONCEPT 2020 VGT",
+      "manufacturer": "Nissan"
+    },
+    "2143": {
+      "model": "R8 LMS '15",
+      "manufacturer": "Audi"
+    },
+    "2144": {
+      "model": "S-FR '15",
+      "manufacturer": "Toyota"
+    },
+    "2145": {
+      "model": "Focus ST '15",
+      "manufacturer": "Ford"
+    },
+    "2146": {
+      "model": "F-type R '14",
+      "manufacturer": "Jaguar"
+    },
+    "2147": {
+      "model": "Veneno '14",
+      "manufacturer": "Lamborghini"
+    },
+    "2148": {
+      "model": "Roadster S (ND) '15",
+      "manufacturer": "Mazda"
+    },
+    "2149": {
+      "model": "Mercedes-AMG GT S '15",
+      "manufacturer": "AMG"
+    },
+    "2150": {
+      "model": "Lancer Evolution Final '15",
+      "manufacturer": "Mitsubishi"
+    },
+    "2152": {
+      "model": "Charger SRT Hellcat '15",
+      "manufacturer": "Dodge"
+    },
+    "2153": {
+      "model": "WRX STI Type S '14",
+      "manufacturer": "Subaru"
+    },
+    "2154": {
+      "model": "86 GT '15",
+      "manufacturer": "Toyota"
+    },
+    "2155": {
+      "model": "Polo GTI '14",
+      "manufacturer": "Volkswagen"
+    },
+    "2156": {
+      "model": "2&4 powered by RC213V",
+      "manufacturer": "Honda"
+    },
+    "2157": {
+      "model": "V8 Vantage Gr.4",
+      "manufacturer": "Aston Martin"
+    },
+    "2158": {
+      "model": "458 Italia GT3 '13",
+      "manufacturer": "Ferrari"
+    },
+    "2159": {
+      "model": "Mustang Gr.3",
+      "manufacturer": "Ford"
+    },
+    "2160": {
+      "model": "Genesis Gr.3",
+      "manufacturer": "Hyundai"
+    },
+    "2161": {
+      "model": "GT-R Gr.4",
+      "manufacturer": "Nissan"
+    },
+    "2162": {
+      "model": "LaFerrari '13",
+      "manufacturer": "Ferrari"
+    },
+    "2163": {
+      "model": "Genesis Gr.4",
+      "manufacturer": "Hyundai"
+    },
+    "2164": {
+      "model": "Mustang Gr.4",
+      "manufacturer": "Ford"
+    },
+    "2166": {
+      "model": "4C Gr.4",
+      "manufacturer": "Alfa Romeo"
+    },
+    "2167": {
+      "model": "GT-R '17",
+      "manufacturer": "Nissan"
+    },
+    "2169": {
+      "model": "TTS Coupe '14",
+      "manufacturer": "Audi"
+    },
+    "2170": {
+      "model": "A 45 AMG '13",
+      "manufacturer": "AMG"
+    },
+    "2171": {
+      "model": "Huracan LP 610-4 '15",
+      "manufacturer": "Lamborghini"
+    },
+    "2172": {
+      "model": "DS 3 Racing '11",
+      "manufacturer": "DS AUTOMOBILES"
+    },
+    "2173": {
+      "model": "Atenza Sedan XD L Package '15",
+      "manufacturer": "Mazda"
+    },
+    "2174": {
+      "model": "650S '14",
+      "manufacturer": "McLaren"
+    },
+    "2175": {
+      "model": "V8 Vantage S '15",
+      "manufacturer": "Aston Martin"
+    },
+    "2176": {
+      "model": "RCZ GT Line '15",
+      "manufacturer": "Peugeot"
+    },
+    "2177": {
+      "model": "Huracan GT3 '15",
+      "manufacturer": "Lamborghini"
+    },
+    "2178": {
+      "model": "S-FR Racing Concept '16",
+      "manufacturer": "Toyota"
+    },
+    "2179": {
+      "model": "Bugatti VGT (Gr.1)",
+      "manufacturer": "Bugatti"
+    },
+    "2180": {
+      "model": "HYUNDAI N 2025 VGT (Gr.1)",
+      "manufacturer": "Hyundai"
+    },
+    "2181": {
+      "model": "LM55 VGT (Gr.1)",
+      "manufacturer": "Mazda"
+    },
+    "2182": {
+      "model": "650S GT3 '15",
+      "manufacturer": "McLaren"
+    },
+    "2183": {
+      "model": "Corvette C7 Gr.3",
+      "manufacturer": "Chevrolet"
+    },
+    "2184": {
+      "model": "F-type Gr.3",
+      "manufacturer": "Jaguar"
+    },
+    "2185": {
+      "model": "Lancer Evolution Final Gr.3",
+      "manufacturer": "Mitsubishi"
+    },
+    "2186": {
+      "model": "WRX Gr.3",
+      "manufacturer": "Subaru"
+    },
+    "2187": {
+      "model": "FT-1 VGT (Gr.3)",
+      "manufacturer": "Toyota"
+    },
+    "2188": {
+      "model": "R.S.01 GT3 '16",
+      "manufacturer": "Renault"
+    },
+    "2190": {
+      "model": "GT by Citroen Race Car (Gr.3)",
+      "manufacturer": "Citroen"
+    },
+    "2192": {
+      "model": "Volkswagen GTI VGT (Gr.3)",
+      "manufacturer": "Volkswagen"
+    },
+    "3183": {
+      "model": "PEUGEOT VGT (Gr.3)",
+      "manufacturer": "Peugeot"
+    },
+    "3185": {
+      "model": "4C Gr.3",
+      "manufacturer": "Alfa Romeo"
+    },
+    "3187": {
+      "model": "Alpine VGT '17",
+      "manufacturer": "Alpine"
+    },
+    "3188": {
+      "model": "SRT Tomahawk VGT (Gr.1)",
+      "manufacturer": "Dodge"
+    },
+    "3192": {
+      "model": "SLS AMG Gr.4",
+      "manufacturer": "AMG"
+    },
+    "3209": {
+      "model": "M4 Safety Car",
+      "manufacturer": "BMW"
+    },
+    "3210": {
+      "model": "Mercedes-AMG GT Safety Car",
+      "manufacturer": "AMG"
+    },
+    "3214": {
+      "model": "Civic Type R (FK2) '15",
+      "manufacturer": "Honda"
+    },
+    "3215": {
+      "model": "208 GTi by Peugeot Sport '14",
+      "manufacturer": "Peugeot"
+    },
+    "3216": {
+      "model": "R.S.01 '16",
+      "manufacturer": "Renault"
+    },
+    "3217": {
+      "model": "Camaro SS '16",
+      "manufacturer": "Chevrolet"
+    },
+    "3218": {
+      "model": "M6 GT3 Endurance Model '16",
+      "manufacturer": "BMW"
+    },
+    "3219": {
+      "model": "NSX '17",
+      "manufacturer": "Honda"
+    },
+    "3220": {
+      "model": "Clio R.S. 220 Trophy '15",
+      "manufacturer": "Renault"
+    },
+    "3221": {
+      "model": "M6 GT3 Sprint Model '16",
+      "manufacturer": "BMW"
+    },
+    "3222": {
+      "model": "86 GRMN '16",
+      "manufacturer": "Toyota"
+    },
+    "3223": {
+      "model": "Viper SRT GT3-R '15",
+      "manufacturer": "Dodge"
+    },
+    "3224": {
+      "model": "Mercedes-AMG GT3 '16",
+      "manufacturer": "AMG"
+    },
+    "3225": {
+      "model": "GT-R Safety Car",
+      "manufacturer": "Nissan"
+    },
+    "3227": {
+      "model": "LC500 '17",
+      "manufacturer": "Lexus"
+    },
+    "3228": {
+      "model": "RC F GT3 prototype '16",
+      "manufacturer": "Lexus"
+    },
+    "3229": {
+      "model": "Mustang Gr.B Rally Car",
+      "manufacturer": "Ford"
+    },
+    "3230": {
+      "model": "Lancer Evolution Final Gr.B Rally Car",
+      "manufacturer": "Mitsubishi"
+    },
+    "3231": {
+      "model": "Scirocco Gr.4",
+      "manufacturer": "Volkswagen"
+    },
+    "3232": {
+      "model": "WRX Gr.B Rally Car",
+      "manufacturer": "Subaru"
+    },
+    "3234": {
+      "model": "Genesis Gr.B Rally Car",
+      "manufacturer": "Hyundai"
+    },
+    "3235": {
+      "model": "NSX Gr.3",
+      "manufacturer": "Honda"
+    },
+    "3237": {
+      "model": "Atenza Gr.3",
+      "manufacturer": "Mazda"
+    },
+    "3238": {
+      "model": "RCZ Gr.3",
+      "manufacturer": "Peugeot"
+    },
+    "3239": {
+      "model": "NSX Gr.B Rally Car",
+      "manufacturer": "Honda"
+    },
+    "3241": {
+      "model": "GT-R Gr.B Rally Car",
+      "manufacturer": "Nissan"
+    },
+    "3242": {
+      "model": "RCZ Gr.B Rally Car",
+      "manufacturer": "Peugeot"
+    },
+    "3245": {
+      "model": "M4 Gr.4",
+      "manufacturer": "BMW"
+    },
+    "3246": {
+      "model": "Veyron Gr.4",
+      "manufacturer": "Bugatti"
+    },
+    "3247": {
+      "model": "Corvette C7 Gr.4",
+      "manufacturer": "Chevrolet"
+    },
+    "3248": {
+      "model": "GT by Citroen Gr.4",
+      "manufacturer": "Citroen"
+    },
+    "3249": {
+      "model": "Viper Gr.4",
+      "manufacturer": "Dodge"
+    },
+    "3251": {
+      "model": "NSX Gr.4",
+      "manufacturer": "Honda"
+    },
+    "3252": {
+      "model": "F-type Gr.4",
+      "manufacturer": "Jaguar"
+    },
+    "3253": {
+      "model": "Huracan Gr.4",
+      "manufacturer": "Lamborghini"
+    },
+    "3254": {
+      "model": "RC F Gr.4",
+      "manufacturer": "Lexus"
+    },
+    "3256": {
+      "model": "Atenza Gr.4",
+      "manufacturer": "Mazda"
+    },
+    "3257": {
+      "model": "650S Gr.4",
+      "manufacturer": "McLaren"
+    },
+    "3258": {
+      "model": "Lancer Evolution Final Gr.4",
+      "manufacturer": "Mitsubishi"
+    },
+    "3259": {
+      "model": "RCZ Gr.4",
+      "manufacturer": "Peugeot"
+    },
+    "3260": {
+      "model": "Megane Gr.4",
+      "manufacturer": "Renault"
+    },
+    "3261": {
+      "model": "WRX Gr.4",
+      "manufacturer": "Subaru"
+    },
+    "3262": {
+      "model": "86 Gr.4",
+      "manufacturer": "Toyota"
+    },
+    "3263": {
+      "model": "458 Italia Gr.4",
+      "manufacturer": "Ferrari"
+    },
+    "3264": {
+      "model": "Focus Gr.B Rally Car",
+      "manufacturer": "Ford"
+    },
+    "3265": {
+      "model": "86 Gr.B Rally Car",
+      "manufacturer": "Toyota"
+    },
+    "3266": {
+      "model": "i3 '15",
+      "manufacturer": "BMW"
+    },
+    "3267": {
+      "model": "F12berlinetta '12",
+      "manufacturer": "Ferrari"
+    },
+    "3268": {
+      "model": "911 GT3 RS (991) '16",
+      "manufacturer": "Porsche"
+    },
+    "3295": {
+      "model": "86 GT 'Limited' '16",
+      "manufacturer": "Toyota"
+    },
+    "3296": {
+      "model": "Corvette C7 Gr.3 Road Car",
+      "manufacturer": "Chevrolet"
+    },
+    "3297": {
+      "model": "WRX STI Isle of Man '16",
+      "manufacturer": "Subaru"
+    },
+    "3298": {
+      "model": "TT Cup '16",
+      "manufacturer": "Audi"
+    },
+    "3299": {
+      "model": "4C Gr.3 Road Car",
+      "manufacturer": "Alfa Romeo"
+    },
+    "3300": {
+      "model": "Mustang Gr.3 Road Car",
+      "manufacturer": "Ford"
+    },
+    "3301": {
+      "model": "Lancer Evolution Final Gr.B Road Car",
+      "manufacturer": "Mitsubishi"
+    },
+    "3303": {
+      "model": "RCZ Gr.3 Road Car",
+      "manufacturer": "Peugeot"
+    },
+    "3304": {
+      "model": "WRX Gr.B Road Car",
+      "manufacturer": "Subaru"
+    },
+    "3305": {
+      "model": "Beetle Gr.3",
+      "manufacturer": "Volkswagen"
+    },
+    "3306": {
+      "model": "Atenza Gr.3 Road Car",
+      "manufacturer": "Mazda"
+    },
+    "3309": {
+      "model": "Vulcan '16",
+      "manufacturer": "Aston Martin"
+    },
+    "3310": {
+      "model": "Cayman GT4 Clubsport '16",
+      "manufacturer": "Porsche"
+    },
+    "3311": {
+      "model": "911 RSR (991) '17",
+      "manufacturer": "Porsche"
+    },
+    "3312": {
+      "model": "TS050 - Hybrid '16",
+      "manufacturer": "Toyota"
+    },
+    "3313": {
+      "model": "919 Hybrid '16",
+      "manufacturer": "Porsche"
+    },
+    "3314": {
+      "model": "Audi VGT",
+      "manufacturer": "Audi"
+    },
+    "3315": {
+      "model": "McLaren VGT",
+      "manufacturer": "McLaren"
+    },
+    "3316": {
+      "model": "COPEN RJ VGT",
+      "manufacturer": "Daihatsu"
+    },
+    "3332": {
+      "model": "L500R HYbrid VGT 2017",
+      "manufacturer": "Peugeot"
+    },
+    "3333": {
+      "model": "L750R HYbrid VGT 2017",
+      "manufacturer": "Peugeot"
+    },
+    "3334": {
+      "model": "R18 '16",
+      "manufacturer": "Audi"
+    },
+    "3335": {
+      "model": "McLaren VGT (Gr.1)",
+      "manufacturer": "McLaren"
+    },
+    "3336": {
+      "model": "F-150 SVT Raptor '11",
+      "manufacturer": "Ford"
+    },
+    "3337": {
+      "model": "A110 '17",
+      "manufacturer": "Alpine"
+    },
+    "3338": {
+      "model": "CHC 1967 Chevy Nova",
+      "manufacturer": "Chris Holstrom Concepts"
+    },
+    "3339": {
+      "model": "BRZ Drift Car '17",
+      "manufacturer": "Subaru"
+    },
+    "3340": {
+      "model": "RC F GT3 '17",
+      "manufacturer": "Lexus"
+    },
+    "3341": {
+      "model": "Pantera '71",
+      "manufacturer": "De Tomaso"
+    },
+    "3342": {
+      "model": "F1500T-A",
+      "manufacturer": "Gran Turismo"
+    },
+    "3343": {
+      "model": "DB11 '16",
+      "manufacturer": "Aston Martin"
+    },
+    "3344": {
+      "model": "M3 Sport Evolution '89",
+      "manufacturer": "BMW"
+    },
+    "3345": {
+      "model": "GT-R NISMO '17",
+      "manufacturer": "Nissan"
+    },
+    "3346": {
+      "model": "Mach Forty",
+      "manufacturer": "Eckert's Rod & Custom"
+    },
+    "3348": {
+      "model": "NSX CONCEPT-GT '16",
+      "manufacturer": "Honda"
+    },
+    "3349": {
+      "model": "RC F GT500 '16",
+      "manufacturer": "Lexus"
+    },
+    "3350": {
+      "model": "GT-R NISMO GT500 '16",
+      "manufacturer": "Nissan"
+    },
+    "3351": {
+      "model": "Audi e-tron VGT",
+      "manufacturer": "Audi"
+    },
+    "3352": {
+      "model": "GR Supra Racing Concept '18",
+      "manufacturer": "Toyota"
+    },
+    "3353": {
+      "model": "Clio R.S. 220 Trophy '16",
+      "manufacturer": "Renault"
+    },
+    "3354": {
+      "model": "BRZ S '15",
+      "manufacturer": "Subaru"
+    },
+    "3356": {
+      "model": "Mini-Cooper 'S' '65",
+      "manufacturer": "MINI"
+    },
+    "3357": {
+      "model": "S660 '15",
+      "manufacturer": "Honda"
+    },
+    "3358": {
+      "model": "911 GT3 (996) '01",
+      "manufacturer": "Porsche"
+    },
+    "3359": {
+      "model": "911 GT3 (997) '09",
+      "manufacturer": "Porsche"
+    },
+    "3360": {
+      "model": "McLaren P1 GTR '16",
+      "manufacturer": "McLaren"
+    },
+    "3361": {
+      "model": "E-type Coupe '61",
+      "manufacturer": "Jaguar"
+    },
+    "3362": {
+      "model": "F50 '95",
+      "manufacturer": "Ferrari"
+    },
+    "3363": {
+      "model": "DB3S '53",
+      "manufacturer": "Aston Martin"
+    },
+    "3364": {
+      "model": "Greddy Fugu Z",
+      "manufacturer": "Greddy"
+    },
+    "3365": {
+      "model": "356 A/1500 GS GT Carrera Speedster '56",
+      "manufacturer": "Porsche"
+    },
+    "3367": {
+      "model": "GR Supra RZ '19",
+      "manufacturer": "Toyota"
+    },
+    "3368": {
+      "model": "Tundra TRD Pro '19",
+      "manufacturer": "Toyota"
+    },
+    "3369": {
+      "model": "SR3 SL '13",
+      "manufacturer": "Radical"
+    },
+    "3370": {
+      "model": "Fit Hybrid '14",
+      "manufacturer": "Honda"
+    },
+    "3371": {
+      "model": "SF19 Super Formula / Toyota '19",
+      "manufacturer": "Super Formula (Dallara)"
+    },
+    "3372": {
+      "model": "SF19 Super Formula / Honda '19",
+      "manufacturer": "Super Formula (Dallara)"
+    },
+    "3373": {
+      "model": "962 C '88",
+      "manufacturer": "Porsche"
+    },
+    "3374": {
+      "model": "Red Bull X2019 Competition",
+      "manufacturer": "Gran Turismo"
+    },
+    "3375": {
+      "model": "356 A/1500 GS Carrera '56",
+      "manufacturer": "Porsche"
+    },
+    "3376": {
+      "model": "D-type '54",
+      "manufacturer": "Jaguar"
+    },
+    "3377": {
+      "model": "Super Bee '70",
+      "manufacturer": "Dodge"
+    },
+    "3383": {
+      "model": "Demio XD Touring '15",
+      "manufacturer": "Mazda"
+    },
+    "3384": {
+      "model": "GTO Twin Turbo '91",
+      "manufacturer": "Mitsubishi"
+    },
+    "3385": {
+      "model": "911 Turbo (930) '81",
+      "manufacturer": "Porsche"
+    },
+    "3387": {
+      "model": "Camaro ZL1 1LE Package '18",
+      "manufacturer": "Chevrolet"
+    },
+    "3388": {
+      "model": "300 SEL 6.8 AMG '71",
+      "manufacturer": "AMG"
+    },
+    "3389": {
+      "model": "M3 '03",
+      "manufacturer": "BMW"
+    },
+    "3390": {
+      "model": "Taycan Turbo S '19",
+      "manufacturer": "Porsche"
+    },
+    "3391": {
+      "model": "Shelby GT350R '16",
+      "manufacturer": "Ford"
+    },
+    "3392": {
+      "model": "Aventador LP 750-4 SV '15",
+      "manufacturer": "Lamborghini"
+    },
+    "3393": {
+      "model": "Carrera GT '04",
+      "manufacturer": "Porsche"
+    },
+    "3394": {
+      "model": "DBR9 GT1 '10",
+      "manufacturer": "Aston Martin"
+    },
+    "3396": {
+      "model": "Jaguar VGT Coupe",
+      "manufacturer": "Jaguar"
+    },
+    "3397": {
+      "model": "CLK-LM '98",
+      "manufacturer": "Mercedes-Benz"
+    },
+    "3398": {
+      "model": "CTR3 '07",
+      "manufacturer": "RUF"
+    },
+    "3399": {
+      "model": "GR Supra Race Car '19",
+      "manufacturer": "Toyota"
+    },
+    "3400": {
+      "model": "911 GT1 Strassenversion '97",
+      "manufacturer": "Porsche"
+    },
+    "3401": {
+      "model": "Crown Athlete G '13",
+      "manufacturer": "Toyota"
+    },
+    "3402": {
+      "model": "Ford GT '17",
+      "manufacturer": "Ford"
+    },
+    "3403": {
+      "model": "Golf I GTI '83",
+      "manufacturer": "Volkswagen"
+    },
+    "3404": {
+      "model": "911 Carrera RS CS (993) '95",
+      "manufacturer": "Porsche"
+    },
+    "3405": {
+      "model": "R8 LMS Evo '19",
+      "manufacturer": "Audi"
+    },
+    "3406": {
+      "model": "Charger SRT Hellcat Safety Car",
+      "manufacturer": "Dodge"
+    },
+    "3407": {
+      "model": "Megane R.S. Trophy Safety Car",
+      "manufacturer": "Renault"
+    },
+    "3408": {
+      "model": "Crown Athlete G Safety Car",
+      "manufacturer": "Toyota"
+    },
+    "3409": {
+      "model": "Mono '16",
+      "manufacturer": "BAC"
+    },
+    "3410": {
+      "model": "917K '70",
+      "manufacturer": "Porsche"
+    },
+    "3413": {
+      "model": "BRZ STI Sport '18",
+      "manufacturer": "Subaru"
+    },
+    "3414": {
+      "model": "Lambo V12 VGT",
+      "manufacturer": "Lamborghini"
+    },
+    "3415": {
+      "model": "8C 2900B Touring Berlinetta '38",
+      "manufacturer": "Alfa Romeo"
+    },
+    "3416": {
+      "model": "Mercedes-AMG GT R '17",
+      "manufacturer": "AMG"
+    },
+    "3417": {
+      "model": "Jaguar VGT SV",
+      "manufacturer": "Jaguar"
+    },
+    "3418": {
+      "model": "GR Supra RZ '20",
+      "manufacturer": "Toyota"
+    },
+    "3419": {
+      "model": "RX-VISION GT3 CONCEPT",
+      "manufacturer": "Mazda"
+    },
+    "3420": {
+      "model": "Focus RS '18",
+      "manufacturer": "Ford"
+    },
+    "3422": {
+      "model": "3.0 CSL '73",
+      "manufacturer": "BMW"
+    },
+    "3423": {
+      "model": "Wicked Fabrication GT 51",
+      "manufacturer": "Wicked Fabrication"
+    },
+    "3427": {
+      "model": "RX-8 Spirit R '12",
+      "manufacturer": "Mazda"
+    },
+    "3428": {
+      "model": "S Barker Tourer '29",
+      "manufacturer": "Mercedes-Benz"
+    },
+    "3429": {
+      "model": "Fairlady Z 432 '69",
+      "manufacturer": "Nissan"
+    },
+    "3430": {
+      "model": "Willys MB '45",
+      "manufacturer": "Jeep"
+    },
+    "3431": {
+      "model": "911 Carrera RS (964) '92",
+      "manufacturer": "Porsche"
+    },
+    "3433": {
+      "model": "FXX K '14",
+      "manufacturer": "Ferrari"
+    },
+    "3434": {
+      "model": "Testarossa '91",
+      "manufacturer": "Ferrari"
+    },
+    "3436": {
+      "model": "Ford GT Race Car '18",
+      "manufacturer": "Ford"
+    },
+    "3437": {
+      "model": "Mangusta '69",
+      "manufacturer": "De Tomaso"
+    },
+    "3438": {
+      "model": "Abarth 595 SS '70",
+      "manufacturer": "Abarth"
+    },
+    "3439": {
+      "model": "911 Carrera RS (993) '95",
+      "manufacturer": "Porsche"
+    },
+    "3441": {
+      "model": "300 SL (W194) '52",
+      "manufacturer": "Mercedes-Benz"
+    },
+    "3442": {
+      "model": "A112 Abarth '85",
+      "manufacturer": "Autobianchi"
+    },
+    "3443": {
+      "model": "308 GTB '75",
+      "manufacturer": "Ferrari"
+    },
+    "3445": {
+      "model": "DB5 '64",
+      "manufacturer": "Aston Martin"
+    },
+    "3446": {
+      "model": "Spyder type 550/1500RS '55",
+      "manufacturer": "Porsche"
+    },
+    "3449": {
+      "model": "Corvette C7 ZR1 '19",
+      "manufacturer": "Chevrolet"
+    },
+    "3451": {
+      "model": "GR Yaris RZ 'High performance' '20",
+      "manufacturer": "Toyota"
+    },
+    "3452": {
+      "model": "917 LIVING LEGEND",
+      "manufacturer": "Porsche"
+    },
+    "3453": {
+      "model": "M3 '89",
+      "manufacturer": "BMW"
+    },
+    "3454": {
+      "model": "3.0 CSL '71",
+      "manufacturer": "BMW"
+    },
+    "3456": {
+      "model": "Swift Sport '17",
+      "manufacturer": "Suzuki"
+    },
+    "3457": {
+      "model": "A220 Race Car '68",
+      "manufacturer": "Alpine"
+    },
+    "3458": {
+      "model": "Mercedes-AMG C 63 S '15",
+      "manufacturer": "AMG"
+    },
+    "3467": {
+      "model": "Civic Type R Limited Edition (FK8) '20",
+      "manufacturer": "Honda"
+    },
+    "3469": {
+      "model": "F8 Tributo '19",
+      "manufacturer": "Ferrari"
+    },
+    "3471": {
+      "model": "Celica GT-Four (ST205) '94",
+      "manufacturer": "Toyota"
+    },
+    "3477": {
+      "model": "Silvia spec-R Aero (S15) Touring Car",
+      "manufacturer": "Nissan"
+    },
+    "3478": {
+      "model": "Porsche VGT",
+      "manufacturer": "Porsche"
+    },
+    "3479": {
+      "model": "Jaguar VGT Roadster",
+      "manufacturer": "Jaguar"
+    },
+    "3480": {
+      "model": "Swift Sport Gr.4",
+      "manufacturer": "Suzuki"
+    },
+    "3481": {
+      "model": "GR86 RZ '21",
+      "manufacturer": "Toyota"
+    },
+    "3485": {
+      "model": "Mercedes-AMG GT Black Series '20",
+      "manufacturer": "AMG"
+    },
+    "3487": {
+      "model": "Mustang Boss 429 '69",
+      "manufacturer": "Ford"
+    },
+    "3495": {
+      "model": "RX-VISION '15",
+      "manufacturer": "Mazda"
+    },
+    "3500": {
+      "model": "G70 3.3T AWD Prestige Package '22",
+      "manufacturer": "Genesis"
+    },
+    "3501": {
+      "model": "G70 GR4",
+      "manufacturer": "Genesis"
+    },
+    "3502": {
+      "model": "Genesis X GR3",
+      "manufacturer": "Genesis"
+    },
+    "3503": {
+      "model": "RX-VISION GT3 CONCEPT Stealth Model",
+      "manufacturer": "Mazda"
+    },
+    "3504": {
+      "model": "Z Performance '23",
+      "manufacturer": "Nissan"
+    },
+    "779": {
+      "model": "Cappuccino (EA11R) '91",
+      "manufacturer": "Suzuki"
+    },
+    "3474": {
+      "model": "BRZ GT300 '21",
+      "manufacturer": "Subaru"
+    },
+    "3506": {
+      "model": "BRZ S '21",
+      "manufacturer": "Subaru"
+    },
+    "3426": {
+      "model": "Roadster Shop Rampage",
+      "manufacturer": "Roadster Shop"
+    },
+    "3476": {
+      "model": "Suzuki Vision Gran Turismo",
+      "manufacturer": "Suzuki"
+    },
+    "3499": {
+      "model": "GR010 HYBRID '21",
+      "manufacturer": "Toyota"
+    },
+    "3508": {
+      "model": "SUZUKI Vision Gran Turismo (Gr.3 Version)",
+      "manufacturer": "Suzuki"
+    },
+    "3444": {
+      "model": "1932 Ford Roadster Hot Rod",
+      "manufacturer": "Ford"
+    },
+    "808": {
+      "model": "V6 Escudo Pikes Peak Special spec.98",
+      "manufacturer": "Suzuki"
+    },
+    "3459": {
+      "model": "918 Spyder '13",
+      "manufacturer": "Porsche"
+    },
+    "3489": {
+      "model": "A6GCS/53 Spyder '54",
+      "manufacturer": "Maserati"
+    },
+    "3493": {
+      "model": "Skyline Super Silhouette Group 5 '84",
+      "manufacturer": "Nissan"
+    },
+    "3488": {
+      "model": "Cayman GT4 '16",
+      "manufacturer": "Porsche"
+    },
+    "3505": {
+      "model": "Mangusta (Christian Dior)",
+      "manufacturer": "De Tomaso"
+    },
+    "3475": {
+      "model": "MP4/4 '88",
+      "manufacturer": "McLaren"
+    },
+    "3462": {
+      "model": "GTO 'The Judge' '69",
+      "manufacturer": "Pontiac"
+    },
+    "3507": {
+      "model": "Porsche VGT Spyder",
+      "manufacturer": "Porsche"
+    },
+    "3511": {
+      "model": "ID.R '19",
+      "manufacturer": "Volkswagen"
+    },
+    "3513": {
+      "model": "Silvia K's Type S (S14) '94",
+      "manufacturer": "Nissan"
+    },
+    "836": {
+      "model": "Skyline 2000GT-R (KPGC110) '73",
+      "manufacturer": "Nissan"
+    },
+    "3421": {
+      "model": "Merak SS '80",
+      "manufacturer": "Maserati"
+    },
+    "3450": {
+      "model": "GT-R NISMO GT3 '18",
+      "manufacturer": "Nissan"
+    },
+    "3512": {
+      "model": "Roadster NR-A (ND) '22",
+      "manufacturer": "Mazda"
+    },
+    "3466": {
+      "model": "Sierra RS 500 Cosworth '87",
+      "manufacturer": "Ford"
+    },
+    "3483": {
+      "model": "M2 Competition '18",
+      "manufacturer": "BMW"
+    },
+    "78": {
+      "model": "Silvia K's Aero (S14) '96",
+      "manufacturer": "Nissan"
+    },
+    "3517": {
+      "model": "Red Bull X2019 25th Anniversary",
+      "manufacturer": "Gran Turismo"
+    },
+    "3411": {
+      "model": "Giulia GTAm '20",
+      "manufacturer": "Alfa Romeo"
+    },
+    "3473": {
+      "model": "Chiron '16",
+      "manufacturer": "Bugatti"
+    },
+    "3510": {
+      "model": "Ferrari Vision Gran Turismo",
+      "manufacturer": "Ferrari"
+    },
+    "3518": {
+      "model": "Corvette C8 Stingray '20",
+      "manufacturer": "Chevrolet"
+    },
+    "781": {
+      "model": "Celica GT-FOUR Rally Car (ST205) '95",
+      "manufacturer": "Toyota"
+    },
+    "2119": {
+      "model": "Italdesign VGT Street Mode",
+      "manufacturer": "Italdesign"
+    },
+    "2120": {
+      "model": "Italdesign VGT Off-road Mode",
+      "manufacturer": "Italdesign"
+    },
+    "3509": {
+      "model": "911 Carrera RS (901) '73",
+      "manufacturer": "Porsche"
+    },
+    "3514": {
+      "model": "DS 21 Pallas '70",
+      "manufacturer": "Citroen"
+    },
+    "3525": {
+      "model": "RA272 '65",
+      "manufacturer": "Honda"
+    },
+    "3490": {
+      "model": "Carrera GTS (904) '64",
+      "manufacturer": "Porsche"
+    },
+    "3519": {
+      "model": "959 '87",
+      "manufacturer": "Porsche"
+    },
+    "3494": {
+      "model": "Alphard Executive Lounge '18",
+      "manufacturer": "Toyota"
+    },
+    "3521": {
+      "model": "Mazda3 '19",
+      "manufacturer": "Mazda"
+    },
+    "3523": {
+      "model": "RS 5 Turbo DTM '19",
+      "manufacturer": "Audi"
+    },
+    "543": {
+      "model": "XJ220 '92",
+      "manufacturer": "Jaguar"
+    },
+    "3528": {
+      "model": "SF23 Super Formula / Honda '23",
+      "manufacturer": "Super Formula (Dallara)"
+    },
+    "3529": {
+      "model": "SF23 Super Formula / Toyota '23",
+      "manufacturer": "Super Formula (Dallara)"
+    },
+    "3531": {
+      "model": "GT3 '20",
+      "manufacturer": "AMG"
+    },
+    "3515": {
+      "model": "GR010 HYBRID (Olympic Esports Series) '21",
+      "manufacturer": "Toyota"
+    },
+    "3522": {
+      "model": "Maverick",
+      "manufacturer": "Greening Auto Company"
+    },
+    "3524": {
+      "model": "GT-R NISMO (R32) '90",
+      "manufacturer": "Nissan"
+    },
+    "3530": {
+      "model": "Giulia Sprint GT Veloce '67",
+      "manufacturer": "Alfa Romeo"
+    },
+    "931": {
+      "model": "Lancer Evolution III GSR '95",
+      "manufacturer": "Mitsubishi"
+    },
+    "3432": {
+      "model": "Impreza Sedan WRX STi '04",
+      "manufacturer": "Subaru"
+    },
+    "3532": {
+      "model": "Valkyrie '21",
+      "manufacturer": "Aston Martin"
+    },
+    "3464": {
+      "model": "Corvette (C1) '58",
+      "manufacturer": "Chevrolet"
+    },
+    "3533": {
+      "model": "MC20 '20",
+      "manufacturer": "Maserati"
+    },
+    "3534": {
+      "model": "Ambulance Himedic '21",
+      "manufacturer": "Toyota"
+    },
+    "3535": {
+      "model": "GR Corolla MORIZO Edition '22",
+      "manufacturer": "Toyota"
+    },
+    "3526": {
+      "model": "Civic",
+      "manufacturer": "Garage RCR"
+    },
+    "3536": {
+      "model": "Civic Type R (FL5) '22",
+      "manufacturer": "Honda"
+    },
+    "3537": {
+      "model": "MAZDA3 Gr.4",
+      "manufacturer": "Mazda"
+    },
+    "1562": {
+      "model": "LFA '10",
+      "manufacturer": "Lexus"
+    },
+    "3486": {
+      "model": "Challenger SRT Demon '18",
+      "manufacturer": "Dodge"
+    },
+    "3520": {
+      "model": "400R '95",
+      "manufacturer": "NISMO"
+    },
+    "575": {
+      "model": "190 E 2.5-16 Evolution II '91",
+      "manufacturer": "Mercedes-Benz"
+    },
+    "3538": {
+      "model": "Charger R/T 426 Hemi '68",
+      "manufacturer": "Dodge"
+    },
+    "3539": {
+      "model": "911 GT3 RS (992) '22",
+      "manufacturer": "Porsche"
+    },
+    "3540": {
+      "model": "Model 3 Performance '23",
+      "manufacturer": "Tesla"
+    },
+    "3541": {
+      "model": "BVLGARI Aluminium VGT",
+      "manufacturer": "BVLGARI"
+    },
+    "3543": {
+      "model": "Genesis X Gran Berlinetta VGT Concept",
+      "manufacturer": "Genesis"
+    },
+    "3545": {
+      "model": "Jimny XC '18",
+      "manufacturer": "Suzuki"
+    },
+    "1541": {
+      "model": "TTS Coupe '09",
+      "manufacturer": "Audi"
+    },
+    "3424": {
+      "model": "Lancer Evolution IX MR GSR '06",
+      "manufacturer": "Mitsubishi"
+    },
+    "3547": {
+      "model": "R4 GTL '85",
+      "manufacturer": "Renault"
+    },
+    "116": {
+      "model": "GT-One (TS020) '99",
+      "manufacturer": "Toyota"
+    },
+    "3412": {
+      "model": "R8 Coupé V10 plus '16",
+      "manufacturer": "Audi"
+    },
+    "3548": {
+      "model": "Urus '18",
+      "manufacturer": "Lamborghini"
+    },
+    "36": {
+      "model": "Chevelle SS 454 Sport Coupé '70",
+      "manufacturer": "Chevrolet"
+    },
+    "3542": {
+      "model": "SKODA Vision Gran Turismo",
+      "manufacturer": "Skoda"
+    },
+    "3546": {
+      "model": "AFEELA Prototype 2024",
+      "manufacturer": "AFEELA"
+    },
+    "37": {
+      "model": "Civic SiR-II (EG) '93",
+      "manufacturer": "Honda"
+    },
+    "140": {
+      "model": "NSX GT500 '00",
+      "manufacturer": "Honda"
+    },
+    "102": {
+      "model": "Skyline GTS-R (R31) '87",
+      "manufacturer": "Nissan"
+    },
+    "3482": {
+      "model": "V40 T5 R-Design '13",
+      "manufacturer": "Volvo"
+    },
+    "3549": {
+      "model": "240 SE Estate '93",
+      "manufacturer": "Volvo"
+    },
+    "3551": {
+      "model": "M3 '97",
+      "manufacturer": "BMW"
+    },
+    "1544": {
+      "model": "430 Scuderia '07",
+      "manufacturer": "Ferrari"
+    },
+    "3544": {
+      "model": "Genesis X Gran Racer Vision Gran Turismo Concept",
+      "manufacturer": "Genesis"
+    },
+    "1506": {
+      "model": "Gallardo LP 560-4 '08",
+      "manufacturer": "Lamborghini"
+    },
+    "3468": {
+      "model": "RGT 4.2 '16",
+      "manufacturer": "RUF"
+    },
+    "3550": {
+      "model": "Impreza Rally Car '98",
+      "manufacturer": "Subaru"
+    },
+    "799": {
+      "model": "Lancer Evolution VIII MR GSR '04",
+      "manufacturer": "Mitsubishi"
+    },
+    "3553": {
+      "model": "GT-R Premium edition T-spec '24",
+      "manufacturer": "Nissan"
+    },
+    "3554": {
+      "model": "Hiace Van DX '16",
+      "manufacturer": "Toyota"
+    },
+    "3555": {
+      "model": "Escort RS Cosworth '92",
+      "manufacturer": "Ford"
+    },
+    "3557": {
+      "model": "W 196 R '55",
+      "manufacturer": "Mercedes-Benz"
+    },
+    "3558": {
+      "model": "911 Turbo S (992) '20",
+      "manufacturer": "Porsche"
+    },
+    "3559": {
+      "model": "Jimny Sierra JC '18",
+      "manufacturer": "Suzuki"
+    },
+    "3560": {
+      "model": "Mission X '23",
+      "manufacturer": "Porsche"
+    },
+    "3561": {
+      "model": "IONIQ 5 N '24",
+      "manufacturer": "Hyundai"
+    },
+    "3562": {
+      "model": "F3500-A",
+      "manufacturer": "Gran Turismo"
+    },
+    "3563": {
+      "model": "Civic Si Extra (EF) '87",
+      "manufacturer": "Honda"
+    },
+    "3565": {
+      "model": "C-HR S '18",
+      "manufacturer": "Toyota"
+    },
+    "655": {
+      "model": "Z4 3.0i '03",
+      "manufacturer": "BMW"
+    },
+    "3564": {
+      "model": "205 GTI '88",
+      "manufacturer": "Peugeot"
+    },
+    "3556": {
+      "model": "Unimog Type 411 '62",
+      "manufacturer": "Mercedes-Benz"
+    },
+    "3447": {
+      "model": "Vantage '18",
+      "manufacturer": "Aston Martin"
+    },
+    "3566": {
+      "model": "CX-30 X Smart Edition '21",
+      "manufacturer": "Mazda"
+    },
+    "3567": {
+      "model": "Kangoo 1.4 '01",
+      "manufacturer": "Renault"
+    },
+    "3470": {
+      "model": "812 Superfast '17",
+      "manufacturer": "Ferrari"
+    },
+    "3570": {
+      "model": "Corvette Z06 (C5) '01",
+      "manufacturer": "Chevrolet"
+    },
+    "3571": {
+      "model": "Carry KC '12",
+      "manufacturer": "Suzuki"
+    },
+    "3572": {
+      "model": "CR-V e:HEV EX Black Edition '21",
+      "manufacturer": "Honda"
+    },
+    "761": {
+      "model": "Lancia Delta HF Integrale Rally Car '92",
+      "manufacturer": "Lancia"
+    },
+    "3573": {
+      "model": "BX 19 TRS '87",
+      "manufacturer": "Citroen"
+    },
+    "3574": {
+      "model": "SUV 2008 Allure '21",
+      "manufacturer": "Peugeot"
+    },
+    "3568": {
+      "model": "Qashqai Tekna 190 2wd e-Power '22",
+      "manufacturer": "Nissan"
+    },
+    "3569": {
+      "model": "R34 GT-R Z-tune '05",
+      "manufacturer": "NISMO"
+    },
+    "3576": {
+      "model": "N-ONE RS '22",
+      "manufacturer": "Honda"
+    },
+    "3579": {
+      "model": "AFEELA 1 '26",
+      "manufacturer": "AFEELA"
+    },
+    "3581": {
+      "model": "Corvette CX Concept '25",
+      "manufacturer": "Chevrolet"
+    },
+    "3582": {
+      "model": "Corvette CX.R Vision Gran Turismo Concept",
+      "manufacturer": "Chevrolet"
+    },
+    "729": {
+      "model": "Avantime 3.0 V6 24V '02",
+      "manufacturer": "Renault"
+    },
+    "3577": {
+      "model": "Corsa GSE Vision Gran Turismo",
+      "manufacturer": "Opel"
+    },
+    "3578": {
+      "model": "MAZDA SPIRIT RACING ROADSTER 12R '25",
+      "manufacturer": "Mazda"
+    },
+    "3583": {
+      "model": "RAV4 Adventure '20",
+      "manufacturer": "Toyota"
+    },
+    "3584": {
+      "model": "Land Cruiser FJ40V '74",
+      "manufacturer": "Toyota"
+    },
+    "3585": {
+      "model": "ELANTRA N '23",
+      "manufacturer": "Hyundai"
+    },
+    "51": {
+      "model": "FTO GP Version R '97",
+      "manufacturer": "Mitsubishi"
+    },
+    "1427": {
+      "model": "BNR34 GT-R N1 base",
+      "manufacturer": "Mine's"
+    },
+    "3575": {
+      "model": "Panda 30 CL '85",
+      "manufacturer": "Fiat"
+    },
+    "3586": {
+      "model": "Polestar 5 Performance",
+      "manufacturer": "Polestar"
+    },
+    "3587": {
+      "model": "296 GTB '22",
+      "manufacturer": "Ferrari"
+    },
+    "3588": {
+      "model": "296 GT3 '23",
+      "manufacturer": "Ferrari"
+    },
+    "3589": {
+      "model": "F3500-B",
+      "manufacturer": "Gran Turismo"
+    },
+    "3591": {
+      "model": "Espace F1 '95",
+      "manufacturer": "Renault"
+    },
+    "3593": {
+      "model": "Beetle 1966 Desert Racer",
+      "manufacturer": "Volkswagen"
+    },
+    "3594": {
+      "model": "Mustang 2015 American Racer",
+      "manufacturer": "Ford"
+    },
+    "3595": {
+      "model": "Skyline GT-R GP-Tuned (KPGC10)",
+      "manufacturer": "Nissan"
+    },
+    "3596": {
+      "model": "Supra GT Road Car (JZA80)",
+      "manufacturer": "Toyota"
+    },
+    "3597": {
+      "model": "911 Turbo Rally (930)",
+      "manufacturer": "Porsche"
+    },
+    "3598": {
+      "model": "AE86 Levin D-Tuned",
+      "manufacturer": "Toyota"
+    },
+    "3590": {
+      "model": "ELANTRA N TC '24",
+      "manufacturer": "Hyundai"
+    },
+    "3599": {
+      "model": "SU7 Ultra '25",
+      "manufacturer": "Xiaomi"
+    },
+    "3600": {
+      "model": "911 GT3 R (992) '22",
+      "manufacturer": "Porsche"
+    },
+    "3592": {
+      "model": "Camaro 1969 Race-Mod",
+      "manufacturer": "Chevrolet"
+    },
+    "3601": {
+      "model": "Captur S Edition TCe 140 '21",
+      "manufacturer": "Renault"
+    },
+    "967": {
+      "model": "efini RX-7 Type R (FD) '91",
+      "manufacturer": "Mazda"
+    },
+    "3440": {
+      "model": "911 Turbo S Leichtbau (964) '93",
+      "manufacturer": "Porsche"
+    },
+    "3602": {
+      "model": "U9 '24",
+      "manufacturer": "Yangwang"
+    },
+    "3603": {
+      "model": "Twingo '93",
+      "manufacturer": "Renault"
+    },
+    "3604": {
+      "model": "M Hybrid V8 '25",
+      "manufacturer": "BMW"
+    },
+    "3605": {
+      "model": "499P '23",
+      "manufacturer": "Ferrari"
+    },
+    "3606": {
+      "model": "9X8 '25",
+      "manufacturer": "Peugeot"
+    },
+    "3607": {
+      "model": "963 '24",
+      "manufacturer": "Porsche"
+    },
+    "3608": {
+      "model": "911 Turbo S Safety Car (992)",
+      "manufacturer": "Porsche"
+    },
+    "3395": {
+      "model": "Seven Superlight R500 '08",
+      "manufacturer": "Caterham"
+    },
+    "3610": {
+      "model": "IONIQ 6N '25",
+      "manufacturer": "Hyundai"
+    },
+    "3611": {
+      "model": "Mark II Tourer V '97",
+      "manufacturer": "Toyota"
+    },
+    "3612": {
+      "model": "Chaser Tourer V '97",
+      "manufacturer": "Toyota"
+    }
+  },
+  "source": "https://github.com/ddm999/gt7info",
+  "commit": "5de32e0f5a7049ae54cbfe499c84df359071cbc4"
+}

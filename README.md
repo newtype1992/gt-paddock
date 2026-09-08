@@ -1,0 +1,64 @@
+# GT Paddock
+
+A local-first Gran Turismo 7 driving companion built with React and Vite. The app is prepared for Vercel hosting and optional Supabase authentication and session-summary storage. Hosting is not required for local telemetry.
+
+## Run
+
+```sh
+npm ci
+npm run dev -- --port 4178
+```
+
+Start the [PC companion](companion/README.md), open Live telemetry, and pair using the code printed by the companion. The pairing code is held in memory, not persisted; refreshing the app requires pairing again. Navigation between pages keeps the same connection alive.
+
+## Driver Workspace
+
+- Overview: loaded recording totals, recent sessions, personal bests grouped by car and manually assigned track.
+- Live telemetry: instruments, live traces, tyre temperatures and recording status.
+- Sessions: search/filter, completed laps, manual track/layout labels, notes and JSON export.
+- Lap analysis: two laps from the same session with speed, RPM, throttle, brake and gear overlays.
+- Driven cars: automatically derived from recorded sessions, not the owned GT7 garage.
+- Settings: companion status, storage information and account sign-in.
+
+The UI loads up to 50 recent session summaries. Totals describe that loaded set, not the user's whole GT7 career. Simulation is excluded from driving totals and driven cars. Timed lap minutes sum completed lap times and do not claim total play time.
+
+Track labels and notes are stored only in this browser, scoped by local/cloud mode and account. They are included in session exports. They are not written to Supabase or the companion.
+
+## Lap Analysis
+
+The recording-to-review milestone is implemented: explicit recorder lifecycle, a Windows companion launcher, startup recovery backup, estimated-distance overlays, a shared cursor and a time-loss review focus. See [workflow and limitations](docs/driving-milestone.md).
+
+Raw samples are retrieved from the local companion's authenticated export endpoint, up to 36,000 samples per session. Cloud mode currently has summaries only and reports that local access is required for analysis.
+
+The observed next-lap boundary and official last-lap duration establish the elapsed-time origin. Partial recordings are labeled, and gaps exceeding one second are not connected. Coverage measures captured short intervals against lap duration. Estimated-distance mode integrates speed and rejects incomplete or mismatched laps; elapsed time remains available. Neither mode claims exact physical track position. Existing recordings do not contain vehicle-position channels.
+
+## Backend and Hosting
+
+The configured Supabase project uses both migrations under `supabase/migrations`. Never put a service-role key in frontend variables:
+
+```text
+VITE_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=YOUR_PUBLISHABLE_KEY
+```
+
+Auth and cloud upload remain optional. The companion uploads using the signed-in user's JWT and owner-scoped RLS. No schema changes were needed for the driver-workspace redesign.
+
+For Vercel: framework Vite, build command `npm run build`, output directory `dist`. Configure the two public environment variables, Supabase redirect URLs, and the companion's allowed frontend origin as appropriate. Live account-statistics sync remains disabled without provider access; its adapter is retained but its page is hidden.
+
+## Verification
+
+```sh
+npm run build
+npm test
+node --test tests/session-model.test.js tests/gt7.test.js tests/gt7-cars.test.js
+```
+
+Browser tests cover connection continuity across pages, session-derived views, notes, lap overlays, channel controls and mobile layout. Unit tests cover lap alignment, coverage, missing boundaries, gaps, summary calculations, model resolution and provider fixtures.
+
+## Existing Data and Assets
+
+The original team-operations pages have been retired. Their browser data and Supabase records are untouched. Old browser workflow tests remain under `tests/legacy` as reference, outside the active browser suite.
+
+Car names and image provenance are documented in [car catalog](docs/car-catalog.md). The reference photo does not represent the user's custom livery. No custom-livery upload was added.
+
+This redesign follows the user's approved personal GT7 companion direction. No Figma artifact was supplied; existing black-and-blue UI conventions were retained.

@@ -1,0 +1,247 @@
+.driving-page {
+  display: grid;
+  gap: 24px;
+}
+.recording-health {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-left: 3px solid #408cff;
+  background: #121a25;
+}
+.recording-health div {
+  display: grid;
+  gap: 7px;
+}
+.recording-health span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.recording-health strong {
+  font-size: 13px;
+}
+.comparison-cursor {
+  padding: 16px 20px;
+}
+.comparison-cursor label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 12px;
+  gap: 12px;
+}
+.comparison-cursor input {
+  width: 100%;
+  accent-color: #408cff;
+  padding: 0;
+}
+.comparison-cursor dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.comparison-cursor dl > div {
+  flex-direction: column;
+  gap: 8px;
+}
+.comparison-cursor dd {
+  text-align: left;
+  font-family: Consolas, monospace;
+}
+.improvement-focus {
+  padding: 20px;
+  border-top: 1px solid var(--line);
+}
+.improvement-focus strong {
+  font-size: 15px;
+}
+.improvement-focus p {
+  margin: 10px 0;
+  line-height: 1.7;
+  color: #cbd9ec;
+}
+.improvement-focus small {
+  display: block;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.improvement-focus button {
+  margin-top: 15px;
+}
+.track-context {
+  border-block: 1px solid var(--line);
+  padding: 18px 0;
+}
+.track-context header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.track-context header > svg {
+  color: #73adff;
+}
+.track-context h2 {
+  font-size: 19px;
+  overflow-wrap: anywhere;
+}
+.track-context small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.track-context dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 24px;
+  margin-bottom: 0;
+}
+.track-context dd {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.session-context-editor h2 {
+  grid-column: 1/-1;
+  font-size: 17px;
+}
+.session-context-editor .context-notes {
+  grid-column: 1/-1;
+}
+@media (max-width: 600px) {
+  .track-context dl {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 14px;
+  }
+  .track-context dl > div {
+    flex-direction: column;
+    gap: 7px;
+  }
+  .track-context dd {
+    text-align: left;
+  }
+}
+.recording-scope {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.session-date {
+  display: block;
+  margin-top: 6px;
+}
+.driven-car {
+  border-block: 1px solid var(--line);
+}
+.driven-car-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 0;
+  color: var(--muted);
+}
+.driven-car-footer button {
+  margin-left: auto;
+}
+.library-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.session-notes {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+  border-block: 1px solid var(--line);
+  padding: 20px 0;
+}
+.session-notes label,
+.analysis-controls label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  min-width: 0;
+}
+.session-notes textarea {
+  resize: vertical;
+}
+.session-notes > div {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 11px;
+}
+.analysis-controls {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+}
+.analysis-controls select {
+  width: 100%;
+}
+.overlay-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 16px 20px;
+  font-size: 11px;
+}
+.overlay-key span:first-child {
+  color: #79b0ff;
+}
+.overlay-key span:nth-child(2) {
+  color: #ff827e;
+}
+.overlay-key small {
+  color: var(--muted);
+}
+.analysis-plot {
+  overflow-x: auto;
+  padding: 0 14px 18px;
+}
+.analysis-plot svg {
+  width: 100%;
+  min-width: 600px;
+  display: block;
+}
+.analysis-plot text {
+  fill: #aeb9cd;
+  font:
+    11px Consolas,
+    monospace;
+}
+.coverage-note {
+  padding: 0 20px 16px;
+  color: #e4b780;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.empty h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.empty .button {
+  margin-top: 20px;
+}
+@media (max-width: 760px) {
+  .analysis-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+  .analysis-controls label:first-child {
+    grid-column: 1/-1;
+  }
+  .session-notes {
+    grid-template-columns: 1fr;
+  }
+  .driven-car-footer {
+    gap: 14px;
+  }
+  .driven-car-footer button {
+    margin-left: 0;
+  }
+}
