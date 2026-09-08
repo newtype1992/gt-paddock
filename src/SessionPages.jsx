@@ -2,7 +2,7 @@ import { LapOverlay } from "./LapOverlay";
 import { TrackContext, SessionContextEditor } from "./SessionContext";
 import { trackLabel, trackKey } from "./session-context";
 import React, { useEffect, useState } from "react";
-import { ArrowRight, Download, Search, Save, Activity } from "lucide-react";
+import { ArrowRight, Download, Upload, Search, Save, Activity } from "lucide-react";
 import { useTelemetry } from "./telemetry-store";
 import { CarIdentity } from "./GT7";
 import { carIdentity } from "./gt7-cars";
@@ -17,8 +17,11 @@ import {
 } from "./session-model";
 
 function saveFile(value, name) {
+  const json = JSON.stringify(value);
+  if (new Blob([json]).size > 64 * 1024 * 1024)
+    throw new Error("Backup exceeds 64 MiB. Preserve the companion SQLite database instead.");
   const url = URL.createObjectURL(
-    new Blob([JSON.stringify(value, null, 2)], { type: "application/json" }),
+    new Blob([json], { type: "application/json" }),
   );
   const a = document.createElement("a");
   a.href = url;
@@ -27,6 +30,7 @@ function saveFile(value, name) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 export function useAnnotations(scope) {
+  const { sessions, transport, companionRequest, setSessions } = useTelemetry();
   const key = "gt7-session-notes:" + scope;
   const read = () => {
     try {
@@ -38,11 +42,17 @@ export function useAnnotations(scope) {
   const [notes, setNotes] = useState(read);
   useEffect(() => setNotes(read()), [key]);
   return [
-    notes,
-    (id, value) => {
+    { ...notes, ...Object.fromEntries(sessions.filter(s => s.annotation !== undefined).map(s => [s.id, s.annotation])) },
+    async (id, value) => {
+      if (transport === "local") {
+        const saved = await companionRequest("/annotations", { id, annotation: value });
+        setSessions(rows => rows.map(s => s.id === id ? { ...s, annotation: saved } : s));
+        return "Saved with recording on this PC.";
+      }
       const next = { ...notes, [id]: value };
       localStorage.setItem(key, JSON.stringify(next));
       setNotes(next);
+      return "Saved on this browser.";
     },
   ];
 }
@@ -216,7 +226,7 @@ export function DrivenCars({ go, open }) {
   );
 }
 export function SessionLibrary({ go, notes, saveNote, selected, open }) {
-  const { sessions, samplesFor, transport } = useTelemetry();
+  const { sessions, companionRequest, transport, connected, setSessions } = useTelemetry();
   const [search, setSearch] = useState("");
   const [car, setCar] = useState("all");
   const [message, setMessage] = useState("");
@@ -226,24 +236,37 @@ export function SessionLibrary({ go, notes, saveNote, selected, open }) {
     setBusy(true);
     setMessage("");
     try {
-      const samples =
-        transport === "local" ? await samplesFor(current.id) : undefined;
-      saveFile(
-        {
-          session: current,
-          annotation: notes[current.id],
-          samples,
-          sample_limit: 36000,
-        },
-        `gt7-${current.id}.json`,
-      );
+      const bundle = transport === "local"
+        ? await companionRequest("/backup?session=" + encodeURIComponent(current.id))
+        : { session: current, annotation: notes[current.id] };
+      // Include legacy browser details until the user explicitly saves them to SQLite.
+      bundle.annotation = notes[current.id] ?? bundle.annotation ?? {};
+      saveFile(bundle, `gt7-${current.id}.json`);
     } catch (e) {
       setMessage(e.message);
     } finally {
       setBusy(false);
     }
   }
-  if (!sessions.length) return <RecordingEmpty go={go} />;
+  async function importSession(event) {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    if (!file) return;
+    setBusy(true);
+    setMessage("");
+    try {
+      if (file.size > 64 * 1024 * 1024) throw new Error("Backup exceeds 64 MiB.");
+      const bundle = JSON.parse(await file.text());
+      const imported = await companionRequest("/import", bundle);
+      setSessions(rows => [imported, ...rows.filter(s => s.id !== imported.id)].slice(0, 50));
+      setMessage("Recording imported and saved on this PC.");
+      open(imported);
+    } catch (error) {
+      setMessage(error instanceof SyntaxError ? "This file is not valid JSON." : error.message);
+    } finally {
+      setBusy(false);
+    }
+  }
   if (current)
     return (
       <div className="driving-page">
@@ -319,6 +342,12 @@ export function SessionLibrary({ go, notes, saveNote, selected, open }) {
   return (
     <section className="section">
       <div className="toolbar">
+        <label className="button">
+          <Upload size={15} /> Import backup
+          <input aria-label="Import session backup" type="file" accept=".json,application/json"
+            disabled={busy || !connected || transport !== "local"} onChange={importSession}
+            style={{ maxWidth: 210 }} />
+        </label>
         <label className="search">
           <Search size={16} />
           <input
@@ -344,6 +373,8 @@ export function SessionLibrary({ go, notes, saveNote, selected, open }) {
           {visible.length} / {sessions.length} loaded
         </span>
       </div>
+      {message && <p role="alert" className="gt7-message">{message}</p>}
+      {!connected && <p className="muted">Connect This PC to import a recording.</p>}
       {visible.length ? (
         <SessionRows sessions={visible} notes={notes} open={open} />
       ) : (

@@ -31,6 +31,10 @@ try {
   await context.route('**/*', async route => {
     const url = new URL(route.request().url());
     if (url.origin === 'http://127.0.0.1:4181') {
+      if (url.pathname === '/annotations') {
+        session.annotation = route.request().postDataJSON().annotation;
+        return route.fulfill({ json: session.annotation });
+      }
       const sample = samples[(frame++ * 7) % 850];
       await route.fulfill({ json: url.pathname === '/export' ? samples
         : url.pathname === '/sessions' ? [session]

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MapPin, Save } from "lucide-react";
 import { multiplier, sessionSettings, trackLabel } from "./session-context";
 
@@ -27,6 +27,8 @@ export function TrackContext({ value = {} }) {
 export function SessionContextEditor({ value = {}, onSave }) {
   const [draft, setDraft] = useState({ ...value });
   const [message, setMessage] = useState("");
+  const [saving, setSaving] = useState(false);
+  useEffect(() => setDraft({ ...value }), [JSON.stringify(value)]);
   const field = (key, label, options) => (
     <label>
       {label}
@@ -54,8 +56,9 @@ export function SessionContextEditor({ value = {}, onSave }) {
   return (
     <form
       className="session-notes session-context-editor"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
+        setSaving(true);
         try {
           const updated = {
             ...draft,
@@ -70,10 +73,11 @@ export function SessionContextEditor({ value = {}, onSave }) {
             "notes",
           ])
             updated[key] = (draft[key] ?? "").trim();
-          onSave(updated);
-          setMessage("Saved on this browser.");
+          setMessage(await onSave(updated) || "Saved.");
         } catch (error) {
           setMessage(error.message || "Could not save session details.");
+        } finally {
+          setSaving(false);
         }
       }}
     >
@@ -118,7 +122,7 @@ export function SessionContextEditor({ value = {}, onSave }) {
         />
       </label>
       <div>
-        <button className="button">
+        <button className="button" disabled={saving}>
           <Save size={15} />
           Save session details
         </button>

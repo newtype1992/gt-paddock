@@ -141,6 +141,19 @@ export function TelemetryProvider({ user, children }) {
       );
     return response.json();
   }
+  async function companionRequest(path, body) {
+    if (transport !== "local" || !connected)
+      throw new Error("Connect This PC in Live telemetry first.");
+    const response = await fetch(local + path, {
+      method: body === undefined ? "GET" : "POST",
+      headers: { Authorization: "Bearer " + pairing, ...(body === undefined ? {} : { "Content-Type": "application/json" }) },
+      body: body === undefined ? undefined : JSON.stringify(body),
+      signal: AbortSignal.timeout(60000),
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Companion request failed. Restart the updated companion if this action is unavailable.");
+    return data;
+  }
   return (
     <Context.Provider
       value={{
@@ -161,6 +174,7 @@ export function TelemetryProvider({ user, children }) {
         selected,
         setSelected,
         samplesFor,
+        companionRequest,
         user,
       }}
     >

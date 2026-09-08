@@ -245,3 +245,7 @@
     margin-left: 0;
   }
 }
+.driver-profile { grid-column: 1 / -1; }
+.driver-profile .auth-fields { max-width: 680px; }
+.profile > span { min-width: 0; }
+.profile strong, .settings-section p { overflow-wrap: anywhere; }

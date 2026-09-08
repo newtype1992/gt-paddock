@@ -15,6 +15,11 @@ const session = {
 async function connect(page) {
   await page.route("http://127.0.0.1:4181/**", async (route) => {
     const url = route.request().url();
+    if (url.endsWith('/annotations')) {
+      const { annotation } = route.request().postDataJSON();
+      session.annotation = annotation;
+      return route.fulfill({ json: annotation });
+    }
     const samples = Array.from({ length: 201 }, (_, i) => ({
       packet_id: i,
       car_id: 82,
@@ -71,7 +76,7 @@ test("recordings populate overview, driven cars and session notes", async ({
   await page.getByLabel("Tyre wear multiplier").fill("0");
   await page.getByLabel("Session notes").fill("Braked too early at turn 1.");
   await page.getByRole("button", { name: "Save session details" }).click();
-  await expect(page.getByRole("status")).toHaveText("Saved on this browser.");
+  await expect(page.getByRole("status")).toHaveText("Saved with recording on this PC.");
   await page.getByRole("button", { name: "Driven cars", exact: true }).click();
   await expect(
     page.getByText("not your owned GT7 garage", { exact: false }),

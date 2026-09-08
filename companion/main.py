@@ -15,6 +15,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 from core import Recorder, normalize
+from archive import MAX_BYTES, reject_constant
 
 
 def private_ipv4(value):
@@ -84,8 +85,8 @@ def main():
             if origin in args.origin:
                 self.send_header('Access-Control-Allow-Origin', origin)
                 self.send_header('Vary', 'Origin')
-            self.send_header('Access-Control-Allow-Headers', 'Authorization')
-            self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+            self.send_header('Access-Control-Allow-Headers', 'Authorization, Content-Type')
+            self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
             self.send_header('Access-Control-Allow-Private-Network', 'true')
             self.send_header('Cache-Control', 'no-store')
             self.send_header('Content-Type', 'application/json')
@@ -112,9 +113,43 @@ def main():
                 elif parsed.path == '/export':
                     session_id = parse_qs(parsed.query).get('session', [''])[0]
                     payload = recorder.history(session_id)
+                elif parsed.path == '/backup':
+                    try:
+                        payload = recorder.bundle(parse_qs(parsed.query).get('session', [''])[0])
+                        if len(json.dumps(payload).encode()) > MAX_BYTES or len(payload['samples']) > 200000:
+                            return self.respond(413, {'error': 'Backup exceeds the portable format limit (64 MiB / 200,000 samples). Preserve the SQLite database instead.'})
+                    except ValueError as exc:
+                        return self.respond(400, {'error': str(exc)})
                 else:
                     return self.respond(404, {'error': 'Not found'})
             self.respond(200, payload)
+
+        def do_POST(self):
+            if not self.permitted():
+                return self.respond(403, {'error': 'Origin not allowed'})
+            if not secrets.compare_digest(self.headers.get('Authorization', ''), 'Bearer ' + token):
+                return self.respond(401, {'error': 'Pairing code is invalid'})
+            if self.path not in ('/annotations', '/import'):
+                return self.respond(404, {'error': 'Not found'})
+            if self.headers.get('Content-Type', '').split(';')[0] != 'application/json':
+                return self.respond(415, {'error': 'JSON required'})
+            try:
+                size = int(self.headers.get('Content-Length', '0'))
+                if not 0 < size <= (MAX_BYTES if self.path == '/import' else 16384):
+                    return self.respond(413, {'error': 'Request exceeds size limit'})
+                self.connection.settimeout(15)
+                data = json.loads(self.rfile.read(size), parse_constant=reject_constant)
+                if not isinstance(data, dict):
+                    raise ValueError('Expected a JSON object.')
+                with lock:
+                    result = recorder.import_bundle(data) if self.path == '/import' else recorder.save_annotation(data.get('id'), data.get('annotation'))
+                self.respond(200, result)
+            except FileExistsError as exc:
+                self.respond(409, {'error': str(exc)})
+            except (ValueError, TypeError, UnicodeError) as exc:
+                self.respond(400, {'error': str(exc)})
+            except (OSError, sqlite3.Error):
+                self.respond(500, {'error': 'Could not store recording. Check disk space and retry.'})
 
     server = ThreadingHTTPServer(('127.0.0.1', args.port), Handler)
     db_path = Path(args.data_dir) / ('simulation.sqlite' if args.simulate else 'gt7.sqlite')

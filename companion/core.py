@@ -4,6 +4,7 @@ import math
 import sqlite3
 import time
 import uuid
+from archive import annotation, validate
 
 
 def finite(value, default=None):
@@ -36,6 +37,7 @@ class Recorder:
           create table if not exists sessions(id text primary key, payload text not null);
           create table if not exists samples(session_id text, captured_at real, payload text);
           create index if not exists samples_session on samples(session_id, captured_at);
+          create table if not exists annotations(session_id text primary key, payload text not null);
         ''')
         self.source = source
         self.current = None
@@ -136,7 +138,44 @@ class Recorder:
         self.last_active_at = sample['captured_at']
 
     def sessions(self):
-        return [json.loads(row[0]) for row in self.db.execute('select payload from sessions order by rowid desc limit 50')]
+        result = []
+        for payload, details in self.db.execute('select s.payload, a.payload from sessions s left join annotations a on a.session_id=s.id order by s.rowid desc limit 50'):
+            session = json.loads(payload)
+            if details is not None:
+                session['annotation'] = json.loads(details)
+            result.append(session)
+        return result
+
+    def save_annotation(self, session_id, value):
+        if not self.db.execute('select 1 from sessions where id=?', (session_id,)).fetchone():
+            raise ValueError('Session not found.')
+        details = annotation(value)
+        with self.db:
+            self.db.execute('insert or replace into annotations values (?,?)', (session_id, json.dumps(details)))
+        return details
+
+    def bundle(self, session_id):
+        if self.current and self.current['id'] == session_id:
+            raise ValueError('Finish the driving session before exporting a backup.')
+        row = self.db.execute('select payload from sessions where id=?', (session_id,)).fetchone()
+        if not row:
+            raise ValueError('Session not found.')
+        details = self.db.execute('select payload from annotations where session_id=?', (session_id,)).fetchone()
+        samples = [json.loads(r[0]) for r in self.db.execute('select payload from samples where session_id=? order by captured_at', (session_id,))]
+        return {'format': 'gt-paddock-session', 'version': 1,
+                'session': json.loads(row[0]), 'annotation': json.loads(details[0]) if details else {}, 'samples': samples}
+
+    def import_bundle(self, bundle):
+        session, samples, details = validate(bundle)
+        if session['source'] != self.source:
+            raise ValueError('Simulation and console recordings must remain separate.')
+        if self.db.execute('select 1 from sessions where id=?', (session['id'],)).fetchone():
+            raise FileExistsError('This session already exists. Nothing was overwritten.')
+        with self.db:
+            self.db.execute('insert into sessions values (?,?)', (session['id'], json.dumps(session)))
+            self.db.executemany('insert into samples values (?,?,?)', ((session['id'], s['captured_at'], json.dumps(s, allow_nan=False)) for s in samples))
+            self.db.execute('insert into annotations values (?,?)', (session['id'], json.dumps(details)))
+        return {**session, 'annotation': details}
 
     def history(self, session_id):
         return [json.loads(row[0]) for row in self.db.execute('select payload from samples where session_id=? order by captured_at limit 36000', (session_id,))]

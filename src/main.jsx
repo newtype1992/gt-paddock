@@ -17,6 +17,7 @@ import {
   Link,
 } from "lucide-react";
 import { supabase } from "./store";
+import { AccountAccess, DriverProfile, useDriverProfile } from "./Account";
 import { TelemetryProvider, useTelemetry } from "./telemetry-store";
 import { Telemetry } from "./GT7";
 import {
@@ -49,14 +50,21 @@ function route() {
 }
 function App() {
   const [user, setUser] = useState(null);
-  const [authError, setAuthError] = useState("");
+  const [authError, setAuthError] = useState(() =>
+    new URLSearchParams(location.hash.slice(1)).has("error")
+      ? "This account link is invalid or expired. Request a new confirmation or password reset email."
+      : "",
+  );
+  const [recovery, setRecovery] = useState(false);
   useEffect(() => {
     if (!supabase) return;
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) =>
-      setUser(session?.user ?? null),
-    );
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+      if (event === "PASSWORD_RECOVERY") setRecovery(true);
+      if (event === "SIGNED_OUT") setRecovery(false);
+    });
     return () => subscription.unsubscribe();
   }, []);
   return (
@@ -65,15 +73,22 @@ function App() {
         user={user}
         authError={authError}
         setAuthError={setAuthError}
+        recovery={recovery}
+        setRecovery={setRecovery}
       />
     </TelemetryProvider>
   );
 }
-function Workspace({ user, authError, setAuthError }) {
+function Workspace({ user, authError, setAuthError, recovery, setRecovery }) {
+  const driver = useDriverProfile(user);
   const [page, setPage] = useState(route);
   const [mobile, setMobile] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [selection, setSelection] = useState(null);
+  useEffect(() => {
+    if (user && !driver.loading && !driver.error && !driver.profile)
+      go("Settings");
+  }, [user?.id, driver.loading, driver.error, driver.profile]);
   const { connected, status, error, transport } = useTelemetry();
   const [notes, saveNote] = useAnnotations(
     (user?.id ?? "local") + ":" + transport,
@@ -146,7 +161,9 @@ function Workspace({ user, authError, setAuthError }) {
               {user?.email?.slice(0, 2).toUpperCase() ?? "GT"}
             </span>
             <span>
-              <strong>{user?.email ?? "Local driver"}</strong>
+              <strong>
+                {driver.profile?.display_name ?? user?.email ?? "Local driver"}
+              </strong>
               <small>{user ? "Account settings" : "Sign in for cloud"}</small>
             </span>
             <ChevronRight size={16} />
@@ -183,6 +200,11 @@ function Workspace({ user, authError, setAuthError }) {
               {error}
             </p>
           )}
+          {authError && (
+            <p role="alert" className="error">
+              {authError}
+            </p>
+          )}
           {page === "Overview" && (
             <DrivingOverview go={go} notes={notes} open={open} />
           )}
@@ -198,10 +220,16 @@ function Workspace({ user, authError, setAuthError }) {
           )}
           {page === "Driven cars" && <DrivenCars go={go} open={open} />}
           {page === "Lap analysis" && (
-            <LapAnalysis go={go} selected={selection} open={open} notes={notes} />
+            <LapAnalysis
+              go={go}
+              selected={selection}
+              open={open}
+              notes={notes}
+            />
           )}
           {page === "Settings" && (
             <div className="settings-layout">
+              {user && <DriverProfile user={user} state={driver} />}
               <section className="settings-section">
                 <h2>Companion</h2>
                 <dl>
@@ -221,7 +249,11 @@ function Workspace({ user, authError, setAuthError }) {
                   </div>
                   <div>
                     <dt>Track labels and notes</dt>
-                    <dd>This browser only</dd>
+                    <dd>
+                      {transport === "local"
+                        ? "Saved edits: PC / SQLite"
+                        : "This browser only"}
+                    </dd>
                   </div>
                   <div>
                     <dt>Units</dt>
@@ -243,8 +275,12 @@ function Workspace({ user, authError, setAuthError }) {
                   <button
                     className="button"
                     onClick={async () => {
-                      const { error } = await supabase.auth.signOut();
-                      setAuthError(error?.message ?? "");
+                      try {
+                        const { error } = await supabase.auth.signOut();
+                        setAuthError(error?.message ?? "");
+                      } catch (e) {
+                        setAuthError(e.message);
+                      }
                     }}
                   >
                     <LogOut size={15} />
@@ -258,7 +294,6 @@ function Workspace({ user, authError, setAuthError }) {
                     Sign in / Create account
                   </button>
                 )}
-                {authError && <p role="alert">{authError}</p>}
                 <p className="muted">
                   Account-statistics sync is unavailable until provider API
                   access is configured.
@@ -276,9 +311,24 @@ function Workspace({ user, authError, setAuthError }) {
           </footer>
         </main>
       </div>
-      {authOpen && (
-        <Modal title="GT Paddock account" onClose={() => setAuthOpen(false)}>
-          <AuthForm />
+      {(authOpen || recovery) && (
+        <Modal
+          title={recovery ? "Set new password" : "GT Paddock account"}
+          onClose={() => {
+            setAuthOpen(false);
+            setRecovery(false);
+          }}
+        >
+          <AccountAccess
+            key={recovery ? "recovery" : "access"}
+            recovery={recovery}
+            onDone={() => {
+              setAuthOpen(false);
+              setRecovery(false);
+              setAuthError("");
+              go("Settings");
+            }}
+          />
         </Modal>
       )}
     </div>
@@ -318,98 +368,6 @@ function Modal({ title, onClose, children }) {
         {children}
       </div>
     </dialog>
-  );
-}
-
-function AuthForm() {
-  const [mode, setMode] = useState("Sign in");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const [busy, setBusy] = useState(false);
-  if (!supabase)
-    return (
-      <p className="auth-notice">
-        Cloud sign-in is not configured for this deployment. Local recordings
-        remain on this PC.
-      </p>
-    );
-  return (
-    <form
-      onSubmit={async (e) => {
-        e.preventDefault();
-        setBusy(true);
-        setMessage("");
-        try {
-          const { error } =
-            mode === "Sign in"
-              ? await supabase.auth.signInWithPassword({ email, password })
-              : await supabase.auth.signUp({
-                  email,
-                  password,
-                  options: { emailRedirectTo: location.origin },
-                });
-          setMessage(
-            error
-              ? error.message
-              : mode === "Sign in"
-                ? "Signed in. Close this dialog to enter your workspace."
-                : "Check your email to confirm your account.",
-          );
-        } catch (e) {
-          setMessage(e.message);
-        } finally {
-          setBusy(false);
-        }
-      }}
-    >
-      <div className="tabs">
-        {["Sign in", "Create account"].map((v) => (
-          <button
-            type="button"
-            key={v}
-            onClick={() => {
-              setMode(v);
-              setMessage("");
-            }}
-            className={mode === v ? "selected" : ""}
-          >
-            {v}
-          </button>
-        ))}
-      </div>
-      <div className="auth-fields">
-        <label>
-          Email
-          <input
-            type="email"
-            autoComplete="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            autoComplete={
-              mode === "Sign in" ? "current-password" : "new-password"
-            }
-            minLength={8}
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-      </div>
-      {message && <p role="status">{message}</p>}
-      <div className="form-actions">
-        <button className="button primary" disabled={busy}>
-          {busy ? "Please wait..." : mode}
-        </button>
-      </div>
-    </form>
   );
 }
 
