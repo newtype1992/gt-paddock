@@ -4,6 +4,8 @@ A local-first Gran Turismo 7 driving companion built with React and Vite. The ap
 
 ## Run
 
+See the [screenshots](#screenshots) for a preview of the driving workspace.
+
 ```sh
 npm ci
 npm run dev -- --port 4178
@@ -23,6 +25,24 @@ Start the [PC companion](companion/README.md), open Live telemetry, and pair usi
 The UI loads up to 50 recent session summaries. Totals describe that loaded set, not the user's whole GT7 career. Simulation is excluded from driving totals and driven cars. Timed lap minutes sum completed lap times and do not claim total play time.
 
 Track labels and notes are stored only in this browser, scoped by local/cloud mode and account. They are included in session exports. They are not written to Supabase or the companion.
+
+## Screenshots
+
+These screenshots use isolated, synthetic demo data, not personal driving records. Track labels are manually entered examples; the car photo is a stock reference image.
+
+### Live Telemetry
+
+![Live telemetry dashboard with speed, RPM, pedal inputs, rolling graphs and tyre temperatures](docs/images/live-telemetry.png)
+
+### Sessions
+
+![Session library with demo laps, track details and session notes](docs/images/sessions.png)
+
+### Lap Analysis
+
+![Synthetic lap comparison with speed overlays, estimated-distance cursor and time delta](docs/images/lap-analysis.png)
+
+To regenerate with the local app running, use `node scripts/readme-screenshots.mjs`. The capture runs in an isolated browser and mocks companion responses without reading recordings.
 
 ## Lap Analysis
 
