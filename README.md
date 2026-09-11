@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./docs/images/newtype-readme-header.svg" width="1200" alt="GT Paddock — animated pixel telemetry traces and lap comparison." />
+</p>
+
 # GT Paddock
 
 A local-first Gran Turismo 7 driving companion built with React and Vite. The app is prepared for Vercel hosting and optional Supabase authentication and session-summary storage. Hosting is not required for local telemetry.
