@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { supabase } from "./store";
 import { connectionState } from "./gt7-model";
+import { mergeFinishedSession } from "./session-model";
 const Context = createContext(null);
 export const local = "http://127.0.0.1:4181";
 export function TelemetryProvider({ user, children }) {
@@ -44,6 +45,13 @@ export function TelemetryProvider({ user, children }) {
                 AbortSignal.timeout(4000),
               ]),
             });
+            if (r.status === 401) {
+              if (current === generation.current && !controller.signal.aborted) {
+                setConnected(false);
+                setPairing('');
+              }
+              throw new Error('Pairing code expired or invalid. Copy the current code from the GT Paddock Companion window and reconnect.');
+            }
             if (!r.ok)
               throw new Error(
                 r.status === 401
@@ -53,6 +61,9 @@ export function TelemetryProvider({ user, children }) {
             return r.json();
           };
           next = await request("/status");
+          if (current !== generation.current || controller.signal.aborted) return;
+          setStatus(next);
+          setSessions((rows) => mergeFinishedSession(rows, next?.last_session));
           if (rounds % 6 === 0) saved = await request("/sessions");
         } else {
           if (!user)
@@ -80,7 +91,7 @@ export function TelemetryProvider({ user, children }) {
         }
         if (current !== generation.current) return;
         setStatus(next);
-        if (saved) setSessions(saved);
+        setSessions((rows) => mergeFinishedSession(saved ?? rows, next?.last_session, rows));
         setError(next?.errors?.receiver || next?.errors?.cloud || "");
         if (next?.sample && ["Live", "Simulation"].includes(connectionState(next)))
           setHistory((h) =>

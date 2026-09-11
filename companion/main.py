@@ -66,6 +66,7 @@ def main():
     parser.add_argument('--port', type=int, default=4181)
     parser.add_argument('--origin', action='append', default=['http://127.0.0.1:4178', 'http://localhost:4178'])
     parser.add_argument('--cloud', action='store_true')
+    parser.add_argument('--pairing-window', action='store_true', help='Show the local pairing window instead of printing the code')
     parser.add_argument('--data-dir', default=str(Path(__file__).parent / 'recordings'))
     args = parser.parse_args()
     cloud = Cloud() if args.cloud else None
@@ -157,6 +158,14 @@ def main():
         with sqlite3.connect(db_path) as source_db, sqlite3.connect(str(db_path) + '.startup-backup') as backup_db:
             source_db.backup(backup_db)
     recorder = Recorder(str(db_path), 'simulation' if args.simulate else 'console')
+    pairing_window = None
+    if args.pairing_window:
+        try:
+            from pairing_window import PairingWindow
+            pairing_window = PairingWindow(token, 'Simulation' if args.simulate else args.ps_ip)
+        except Exception as exc:
+            server.server_close()
+            raise RuntimeError('Pairing window unavailable. Install Python with Tcl/Tk, or launch without --pairing-window for terminal pairing.') from exc
 
     def receive():
         try:
@@ -203,21 +212,43 @@ def main():
                 recorder.tick()
 
     print(f'GT Paddock companion: http://127.0.0.1:{args.port}', flush=True)
-    print(f'Pairing code: {token}', flush=True)
+    if pairing_window:
+        print('Pairing code is available in the GT Paddock Companion window.', flush=True)
+    else:
+        print(f'Pairing code: {token}', flush=True)
     print('SIMULATION DATA' if args.simulate else f'Waiting for GT7 on {args.ps_ip}', flush=True)
-    threading.Thread(target=receive, daemon=True).start()
-    threading.Thread(target=lifecycle, daemon=True).start()
+    receiver_thread = threading.Thread(target=receive, daemon=True)
+    lifecycle_thread = threading.Thread(target=lifecycle, daemon=True)
+    receiver_thread.start()
+    lifecycle_thread.start()
     if cloud:
         threading.Thread(target=upload, daemon=True).start()
+    server_thread = None
     try:
-        server.serve_forever()
+        if pairing_window:
+            server_thread = threading.Thread(target=server.serve_forever, daemon=True)
+            server_thread.start()
+            pairing_window.run()
+        else:
+            server.serve_forever()
     except KeyboardInterrupt:
         pass
     finally:
         stop.set()
+        receiver_thread.join(timeout=1)
+        lifecycle_thread.join(timeout=1)
+        if server_thread:
+            server.shutdown()
+            server_thread.join(timeout=5)
+            try:
+                pairing_window.destroy()
+            except Exception:
+                pass
         with lock:
             recorder.finish('companion_shutdown')
         server.server_close()
+        if not receiver_thread.is_alive() and not lifecycle_thread.is_alive():
+            recorder.db.close()
 
 
 if __name__ == '__main__':

@@ -1,3 +1,14 @@
+// The status snapshot can arrive before the slower session-list refresh.
+export function mergeFinishedSession(rows, finished, previous = []) {
+  if (!finished?.id || !finished.ended_at) return rows;
+  const listed = rows.find((s) => s.id === finished.id);
+  const cached = previous.find((s) => s.id === finished.id);
+  const annotation = listed?.annotation ?? cached?.annotation ?? finished.annotation;
+  const session = { ...listed, ...finished, ...(annotation === undefined ? {} : { annotation }) };
+  return [session, ...rows.filter((s) => s.id !== finished.id)]
+    .sort((a, b) => b.started_at - a.started_at);
+}
+
 export function validLaps(session) {
   return (session?.laps ?? []).filter(
     (l) => Number.isFinite(l.time_ms) && l.time_ms > 0,

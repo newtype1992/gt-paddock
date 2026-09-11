@@ -10,6 +10,9 @@ import {
   Timer,
   Fuel,
   CircleAlert,
+  Headphones,
+  Eye,
+  EyeOff,
 } from "lucide-react";
 import { supabase } from "./store";
 import { connectionState, lapTime, profileIdentifier } from "./gt7-model";
@@ -29,7 +32,7 @@ function exportJSON(data, name) {
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-export function Telemetry({ user }) {
+export function Telemetry({ user, go, openSession }) {
   const {
     transport,
     setTransport,
@@ -49,6 +52,13 @@ export function Telemetry({ user }) {
     setSelected,
   } = useTelemetry();
   const [exporting, setExporting] = useState(false);
+  const [showPairing, setShowPairing] = useState(false);
+  useEffect(() => {
+    if (!showPairing) return;
+    const timer = setTimeout(() => setShowPairing(false), 20000);
+    return () => clearTimeout(timer);
+  }, [showPairing]);
+  useEffect(() => { if (connected) setShowPairing(false); }, [connected]);
   const state = connected ? connectionState(status) : "Disconnected";
   const sample = status?.sample;
   const fresh = connected && sample && ["Live", "Simulation"].includes(state);
@@ -95,16 +105,16 @@ export function Telemetry({ user }) {
             </option>
           </select>
           {transport === "local" && (
-            <input
+            <div className="pairing-code-field"><input
               aria-label="Companion pairing code"
-              type="password"
+              type={showPairing ? 'text' : 'password'}
               autoComplete="off"
               placeholder="Companion pairing code"
               required
               disabled={connected}
               value={pairing}
-              onChange={(e) => setPairing(e.target.value)}
-            />
+              onChange={(e) => setPairing(e.target.value.trim())}
+            /><button type="button" className="icon-button" disabled={connected} aria-label={showPairing ? 'Hide pairing code' : 'Show pairing code'} title={showPairing ? 'Hide pairing code' : 'Show pairing code'} onClick={() => setShowPairing(v => !v)}>{showPairing ? <EyeOff size={16} /> : <Eye size={16} />}</button></div>
           )}
           {connected ? (
             <button
@@ -128,6 +138,13 @@ export function Telemetry({ user }) {
           )}
         </form>
       </section>
+      {transport === 'local' && !connected && <details className="pairing-help"><summary>Where do I find my pairing code?</summary>
+        <ol><li>On your PC, open <strong>Start GT Paddock Companion.cmd</strong> from the project folder.</li>
+          <li>In the <strong>GT Paddock Companion</strong> window, select <strong>Copy code</strong>.</li>
+          <li>Paste it above and select <strong>Connect</strong>. Keep the companion running.</li></ol>
+        <p>The code changes when the companion restarts. Older companion versions display it in their terminal. No PlayStation password is needed. The web app keeps this code in memory only.</p>
+      </details>}
+      {connected && status && !error && <div className="engineer-actions"><button className="button" onClick={() => go('Race engineer')}><Headphones size={16} />Open race engineer</button></div>}
       {error && (
         <div className="error" role="alert">
           <CircleAlert size={16} />
@@ -167,9 +184,9 @@ export function Telemetry({ user }) {
             )}
           </div>
           {!status.session && status.last_session && (
-            <a className="button" href="#Sessions">
+            <button className="button" onClick={() => openSession(status.last_session)}>
               Review saved session
-            </a>
+            </button>
           )}
         </section>
       )}

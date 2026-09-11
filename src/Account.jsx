@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LockKeyhole, Save } from "lucide-react";
 import { supabase } from "./store";
 import { validateDriverProfile } from "./driver-profile";
+import { SocialSignIn } from './SocialSignIn';
 
 export function useDriverProfile(user) {
   const [profile, setProfile] = useState(null);
@@ -250,6 +251,7 @@ export function AccountAccess({ recovery = false, onDone }) {
           ))}
         </div>
       )}
+      {!recovery && ['Sign in', 'Create account'].includes(mode) && <SocialSignIn busy={busy} setBusy={setBusy} setMessage={setMessage} />}
       <div className="auth-fields">
         {!recovery && (
           <label>

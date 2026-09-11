@@ -8,12 +8,12 @@ if (-not (Test-Path -LiteralPath $python)) {
     exit 1
 }
 if (Get-NetTCPConnection -State Listen -LocalPort 4181 -ErrorAction SilentlyContinue) {
-    Write-Host 'Port 4181 is already in use. Keep the existing GT Paddock companion running, or close it before starting another.'
+    Write-Host 'The companion port is already in use. Look for GT Paddock Companion in the taskbar. Older versions show the pairing code in their terminal. Stop that companion before launching this updated window; do not interrupt an active drive.'
     Read-Host 'Press Enter to close'
     exit 0
 }
 Write-Host 'GT Paddock companion / Keep this window open while driving.'
-Write-Host 'Enter the pairing code below in Live telemetry. Ctrl+C stops recording.'
+Write-Host 'Use Copy code in the GT Paddock Companion window, then paste into Live telemetry.'
 Set-Location -LiteralPath $root
-& $python -u (Join-Path $PSScriptRoot 'main.py') --ps-ip $PlayStationIP
+& $python -u (Join-Path $PSScriptRoot 'main.py') --ps-ip $PlayStationIP --pairing-window
 Read-Host 'Companion stopped. Press Enter to close'

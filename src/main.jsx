@@ -15,11 +15,13 @@ import {
   Cloud,
   LogOut,
   Link,
+  Headphones,
 } from "lucide-react";
 import { supabase } from "./store";
 import { AccountAccess, DriverProfile, useDriverProfile } from "./Account";
 import { TelemetryProvider, useTelemetry } from "./telemetry-store";
 import { Telemetry } from "./GT7";
+import { RaceEngineer } from './RaceEngineer';
 import {
   DrivingOverview,
   DrivenCars,
@@ -35,6 +37,7 @@ import "./sessions.css";
 const navigation = [
   ["Overview", LayoutDashboard],
   ["Live telemetry", Gauge],
+  ["Race engineer", Headphones],
   ["Sessions", Timer],
   ["Lap analysis", Activity],
   ["Driven cars", Car],
@@ -188,11 +191,12 @@ function Workspace({ user, authError, setAuthError, recovery, setRecovery }) {
             {state}
           </span>
         </header>
+        <div id="engineer-bar-slot" />
         <main>
           <div className="page-heading">
             <div>
               <div className="eyebrow">GT7 / DRIVER WORKSPACE</div>
-              <h1>{page}</h1>
+              <h1 tabIndex={-1}>{page}</h1>
             </div>
           </div>
           {error && page !== "Live telemetry" && (
@@ -208,7 +212,8 @@ function Workspace({ user, authError, setAuthError, recovery, setRecovery }) {
           {page === "Overview" && (
             <DrivingOverview go={go} notes={notes} open={open} />
           )}
-          {page === "Live telemetry" && <Telemetry user={user} />}
+          {page === "Live telemetry" && <Telemetry user={user} go={go} openSession={open} />}
+          <RaceEngineer visible={page === 'Race engineer'} go={go} openSession={open} />
           {page === "Sessions" && (
             <SessionLibrary
               go={go}

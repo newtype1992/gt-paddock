@@ -2,10 +2,26 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
   bestLap,
+  mergeFinishedSession,
   lapSamples,
   sessionTotals,
   tracePath,
 } from "../src/session-model.js";
+test("finished snapshots bridge stale lists without duplicates or losing notes", () => {
+  const old = { id: 'old', started_at: 1 };
+  const finished = { id: 'new', started_at: 2, ended_at: 3, laps: [{ lap: 1, time_ms: 90000 }] };
+  const initial = mergeFinishedSession([old], finished);
+  assert.deepEqual(initial, [finished, old]);
+  const annotated = [{ ...finished, annotation: { track: 'Trial Mountain' } }, old];
+  const stale = mergeFinishedSession([old], finished, annotated);
+  assert.deepEqual(stale, annotated);
+  const refreshed = mergeFinishedSession([{ ...finished, laps: [], annotation: { track: 'Spa' } }, old], finished, annotated);
+  assert.equal(refreshed.length, 2);
+  assert.deepEqual(refreshed[0].laps, finished.laps);
+  assert.equal(refreshed[0].annotation.track, 'Spa');
+  assert.deepEqual(mergeFinishedSession([old], null), [old]);
+  assert.deepEqual(mergeFinishedSession([old], { id: 'active' }), [old]);
+});
 test("summary only aggregates valid completed laps", () => {
   const s = {
     car_id: 82,

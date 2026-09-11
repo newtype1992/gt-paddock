@@ -4,6 +4,10 @@ Uses the MIT-licensed [granturismo decoder](https://github.com/chrshdl/granturis
 
 ## Run on Windows
 
+After the environment is installed, double-click **Start GT Paddock Companion.cmd** in the project folder. The GT Paddock Companion window provides a masked code, **Show code**, **Copy code**, and **Open GT Paddock**. The local web app must already be running. Paste the copied code into Live telemetry and Connect. Keep the companion window open or minimized while driving. GUI mode requires Python with Tcl/Tk; it does not print the credential in startup logs. See [pairing flow and security](../docs/pairing-flow.md).
+
+The terminal-only command below remains available for development and prints the pairing code in its terminal. Add `--pairing-window` for the new window. An already-running older companion must be stopped when safe before launching the updated version.
+
 ```powershell
 py -3 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r companion\requirements.txt

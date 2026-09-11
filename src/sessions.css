@@ -249,3 +249,7 @@
 .driver-profile .auth-fields { max-width: 680px; }
 .profile > span { min-width: 0; }
 .profile strong, .settings-section p { overflow-wrap: anywhere; }
+.social-sign-in { display: grid; gap: 12px; margin: 20px 0; }
+.social-sign-in > div { display: grid; gap: 4px; }
+.social-sign-in .button { width: 100%; justify-content: center; min-height: 44px; }
+.social-sign-in small { color: #aab4c4; }
