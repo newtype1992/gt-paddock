@@ -88,6 +88,36 @@ function Workspace({ user, authError, setAuthError, recovery, setRecovery }) {
   const [mobile, setMobile] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [selection, setSelection] = useState(null);
+  const headingRef = useRef(null);
+  const sidebarRef = useRef(null);
+  const toggleRef = useRef(null);
+  const firstRoute = useRef(true);
+  useEffect(() => {
+    if (firstRoute.current) { firstRoute.current = false; return; }
+    headingRef.current?.focus();
+  }, [page, page === 'Sessions' ? selection : null]);
+  useEffect(() => {
+    if (!mobile) return;
+    sidebarRef.current?.querySelector('nav button[aria-current="page"]')?.focus();
+    const dismiss = (event) => {
+      if (event.key === 'Escape') {
+        setMobile(false);
+        toggleRef.current?.focus();
+      }
+    };
+    const outside = (event) => {
+      if (!sidebarRef.current?.contains(event.target) && !toggleRef.current?.contains(event.target)) setMobile(false);
+    };
+    const resized = () => { if (innerWidth > 760) setMobile(false); };
+    document.addEventListener('keydown', dismiss);
+    document.addEventListener('pointerdown', outside);
+    window.addEventListener('resize', resized);
+    return () => {
+      document.removeEventListener('keydown', dismiss);
+      document.removeEventListener('pointerdown', outside);
+      window.removeEventListener('resize', resized);
+    };
+  }, [mobile]);
   useEffect(() => {
     if (user && !driver.loading && !driver.error && !driver.profile)
       go("Settings");
@@ -105,6 +135,7 @@ function Workspace({ user, authError, setAuthError, recovery, setRecovery }) {
     return () => removeEventListener("hashchange", changed);
   }, []);
   function go(value) {
+    if (value === page) headingRef.current?.focus();
     setPage(value);
     location.hash = encodeURIComponent(value);
     setMobile(false);
@@ -116,7 +147,8 @@ function Workspace({ user, authError, setAuthError, recovery, setRecovery }) {
   const state = connected ? connectionState(status) : "Disconnected";
   return (
     <div className="app-shell">
-      <aside className={"sidebar " + (mobile ? "mobile-open" : "")}>
+      <button className="skip-navigation" onClick={() => headingRef.current?.focus()}>Skip to main content</button>
+      <aside ref={sidebarRef} id="workspace-navigation" className={"sidebar " + (mobile ? "mobile-open" : "")}>
         <a className="brand" href="#Overview" onClick={() => go("Overview")}>
           <span className="brand-mark">
             <Flag size={22} />
@@ -133,11 +165,12 @@ function Workspace({ user, authError, setAuthError, recovery, setRecovery }) {
           </div>
         </div>
         <div className="nav-caption">DRIVING</div>
-        <nav>
+        <nav aria-label="Workspace">
           {navigation.map(([label, Icon]) => (
             <button
               key={label}
               className={page === label ? "active" : ""}
+              aria-current={page === label ? 'page' : undefined}
               onClick={() => go(label)}
             >
               <Icon size={19} />
@@ -179,6 +212,9 @@ function Workspace({ user, authError, setAuthError, recovery, setRecovery }) {
             <IconButton
               icon={Menu}
               label="Toggle navigation"
+              ref={toggleRef}
+              aria-expanded={mobile}
+              aria-controls="workspace-navigation"
               className="icon-button mobile-toggle"
               onClick={() => setMobile(!mobile)}
             />
@@ -196,7 +232,7 @@ function Workspace({ user, authError, setAuthError, recovery, setRecovery }) {
           <div className="page-heading">
             <div>
               <div className="eyebrow">GT7 / DRIVER WORKSPACE</div>
-              <h1 tabIndex={-1}>{page}</h1>
+              <h1 ref={headingRef} tabIndex={-1}>{page}</h1>
             </div>
           </div>
           {error && page !== "Live telemetry" && (

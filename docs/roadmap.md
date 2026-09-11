@@ -1,5 +1,7 @@
 # GT Paddock Roadmap
 
+Mobile/keyboard handoffs first pass implemented: destination focus, skip navigation, mobile menu state and Escape recovery, and 320px connection-page layout. See [navigation QA](navigation-qa.md). Next priority: a real race and time-trial acceptance pass covering pairing, audio, recording, review and comparison; deferred features remain deferred.
+
 Development status and planning reference. Later and deferred items are not implemented features.
 
 ## Current Priority: Existing User Journey

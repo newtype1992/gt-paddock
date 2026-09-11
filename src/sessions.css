@@ -229,6 +229,7 @@
   margin-top: 20px;
 }
 @media (max-width: 760px) {
+  body { min-width: 320px; }
   .analysis-controls {
     grid-template-columns: 1fr 1fr;
   }
@@ -253,3 +254,19 @@
 .social-sign-in > div { display: grid; gap: 4px; }
 .social-sign-in .button { width: 100%; justify-content: center; min-height: 44px; }
 .social-sign-in small { color: #aab4c4; }
+.skip-navigation {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  transform: translateY(-150%);
+  padding: 12px 16px;
+  background: #080b10;
+  color: #fff;
+}
+.skip-navigation:focus { transform: translateY(0); }
+main h1:focus-visible { outline: 2px solid #48aaff; outline-offset: 6px; }
+@media (max-width: 760px) {
+  .sidebar.mobile-open { overflow-y: auto; }
+  .mobile-toggle { min-width: 44px; min-height: 44px; }
+}
